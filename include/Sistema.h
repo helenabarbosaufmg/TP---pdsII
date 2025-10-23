@@ -15,15 +15,12 @@ private:
 public:
     Sistema(); 
 
-    // Hóspedes
     void cadastrarHospede(Hospede h);
     std::vector<Hospede> listarHospedes() const;
 
-    // Quartos 
     void cadastrarQuarto(Quartos q);
     std::vector<Quartos> listarQuartos() const;
 
-    // Reservas
     void criarReserva(Reserva r);
     std::vector<Reserva> listarReservas() const;
 
