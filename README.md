@@ -27,6 +27,6 @@ O sistema proposto busca solucionar esses problemas ao **automatizar o processo 
 
 ## 5. Grupo
 - Helena de Oliveira Barbosa  
-- Lilla de Lucas Xavier
+- Lilla de Lucas Xavier de Oliveira 
 - Maria Luisa Braga
 - Livia Viana  
