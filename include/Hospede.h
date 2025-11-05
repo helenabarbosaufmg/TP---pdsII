@@ -1,4 +1,6 @@
 #include <iostream>
+#ifndef HOSPEDE_H
+#define HOSPEDE_H
 
 using namespace std;
 
