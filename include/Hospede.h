@@ -1,9 +1,5 @@
-#ifndef HOSPEDE_H
-#define HOSPEDE_H
-
-#include <string>
-<<<<<<< HEAD
 #include <iostream>
+
 using namespace std;
 
 class Hospede {
@@ -30,3 +26,6 @@ public:
     void H_Email(const string& email);
 
     void Hospede_info() const;
+};
+
+#endif
