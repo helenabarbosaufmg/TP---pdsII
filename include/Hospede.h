@@ -2,6 +2,7 @@
 #define HOSPEDE_H
 
 #include <string>
+<<<<<<< HEAD
 #include <iostream>
 using namespace std;
 
@@ -29,6 +30,3 @@ public:
     void H_Email(const string& email);
 
     void Hospede_info() const;
-};
-
-#endif
