@@ -14,9 +14,9 @@ public:
     
     Quartos(int numero, std::string tipo, double preco);
 
-    int getNumero() const;
-    std::string getTipo() const;
-    double getPreco() const;
+    int QNumero() const;
+    std::string QTipo() const;
+    double QPreco() const;
     bool estaOcupado() const;
 
     void ocupar();
