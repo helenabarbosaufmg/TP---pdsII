@@ -26,11 +26,11 @@ Quartos Reserva::RQuarto() const {
 }
 
 string Reserva::RCheckIn() const {
-    return dataCheckIn;
+    return infoCheckIn;
 }
 
 string Reserva::RCheckOut() const {
-    return dataCheckOut;
+    return infoCheckOut;
 }
 
 string Reserva::RStatus() const {
