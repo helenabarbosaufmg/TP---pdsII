@@ -23,10 +23,10 @@ public:
     Quartos RQuarto() const;
     std::string RCheckIn() const;
     std::string RCheckOut() const;
-    std::string StatusFinal() const;
+    std::string RStatus() const;
     double RValorFinal() const;
 
-    void Status(std::string novoStatus);
+    void StatusFinal(std::string statusAtualizado);
     void setValorFinal(double valor);
 };
 
