@@ -19,7 +19,7 @@ private:
     bool quartoCadastrado(int numero) const;
     int  posicaoQuarto(int numero) const;
 
-    bool reservaConflita(int numeroQuarto,
+    bool reservaSobreposta(int numeroQuarto,
         const std::string& checkIn,
         const std::string& checkOut) const;
 
