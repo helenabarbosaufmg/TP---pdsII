@@ -1,22 +1,27 @@
 #include <iostream>
 #include <vector>
+#include <string> 
 #include "Hospede.h"
 #include "Quartos.h"
+#include "Reserva.h"
 using namespace std;
 
 int main() {
     vector<Hospede> hospedes;
     vector<Quartos> quartos;
+    vector<Reserva> reservas; 
     int opcao;
+    int proximaReserva = 1; 
 
     do {
        cout << "\n\tSISTEMA DO HOTEL" << endl;
         cout << "1 - Cadastrar novo hóspede" << endl;
         cout << "2 - Pesquisar hóspede" << endl; 
-        cout << "3 - Cadastrar novo quarto" << endl;
-        cout << "4 - Status de reservas (Listar quartos)" << endl;
-        cout << "5 - Ocupar quarto" << endl;
-        cout << "6 - Liberar quarto" << endl;
+        cout << "3 - Pesquisar número de reserva" << endl;
+        cout << "4 - Cadastrar novo quarto" << endl;
+        cout << "5 - Status de reservas (Listar quartos)" << endl;
+        cout << "6 - Ocupar quarto" << endl;
+        cout << "7 - Liberar quarto" << endl;
         cout << "0 - Sair" << endl;
         cout << "Escolha: ";
         cin >> opcao;
@@ -67,8 +72,49 @@ int main() {
             if (!encontrado) {
                 cout << "Hóspede não encontrado.\n";
             }
-           
-        } else if (opcao == 3) {
+        }
+        else if(opcao == 3){ 
+            if(reservas.empty()) {
+                cout << "\nNenhuma reserva foi cadastrada ainda" << endl; 
+            } else {
+                int numeroBusca; 
+                cout << "\nDigite o número da reserva: "<< endl; 
+                cin >> numeroBusca; 
+
+                bool encontrada = false; 
+                for (auto &r : reservas) { 
+                    if (r.RNumeroReserva () == numeroBusca) { 
+                        Hospede h = r.RHospede(); 
+                        Quartos q = r.RQuarto; 
+
+                        cout << "\nDados da Reserva: "<< r.RNumeroReserva() << endl; 
+                        cout << "Status: " << r.RStatus() << endl; 
+                        cout << "Check-in: " << r.RCheckIn() << endl; 
+                        cout << "Check-out: " << r.RCheckOut() << endl; 
+
+                        cout << "\nHóspede:\n";
+                        cout << "Código: " << h.HCodigo() << endl;
+                        cout << "Nome: " << h.HNome() << endl;
+                        cout << "RG: " << h.HRG() << endl;
+                        cout << "Telefone: " << h.HTelefone() << endl;
+                        cout << "Email: " << h.HEmail() << endl;
+
+                        cout << "\nQuarto:\n";
+                        cout << "Número: " << q.QNumero() << endl;
+                        cout << "Tipo: " << q.QTipo() << endl;
+                        cout << "Preço diária: R$ " << q.QPreco() << endl;
+
+                        encontrada = true; 
+                        break; 
+                    } 
+                } 
+                if (!encontrada) { 
+                    cout << "Reserva não encontrada. " << endl; 
+                }
+            }
+        } 
+    
+        } else if (opcao == 4) {
             int numero;
             string tipo;
             double preco;
@@ -90,7 +136,7 @@ int main() {
             cout << "\nQuarto cadastrado com sucesso!\n";
 
         }
-         else if (opcao == 4) {
+         else if (opcao == 5) {
             cout << "\n\tStatus de Reservas (Lista de Quartos)\n";
             if (quartos.empty()) {
                 cout << "Nenhum quarto cadastrado.\n";
@@ -105,7 +151,7 @@ int main() {
                 }
             }
         
-        } else if (opcao == 5) {
+        } else if (opcao == 6) {
             int numero;
             cout << "\nNúmero do quarto a ocupar: ";
             cin >> numero;
@@ -125,7 +171,7 @@ int main() {
             if (!encontrado)
                 cout << "Quarto não encontrado.\n";
 
-        } else if (opcao == 6) {
+        } else if (opcao == 7) {
             int numero;
             cout << "\nNúmero do quarto a liberar: ";
             cin >> numero;
