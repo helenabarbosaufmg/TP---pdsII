@@ -85,7 +85,7 @@ int main() {
                 for (auto &r : reservas) { 
                     if (r.RNumeroReserva () == numeroBusca) { 
                         Hospede h = r.RHospede(); 
-                        Quartos q = r.RQuartos(); 
+                        Quartos q = r.RQuarto(); 
 
                         cout << "\nDados da Reserva: "<< r.RNumeroReserva() << endl; 
                         cout << "Status: " << r.RStatus() << endl; 
