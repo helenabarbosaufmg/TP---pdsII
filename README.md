@@ -29,4 +29,39 @@ O sistema proposto busca solucionar esses problemas ao **automatizar o processo 
 - Helena de Oliveira Barbosa  
 - Lilla de Lucas Xavier de Oliveira 
 - Maria Luisa Braga
-- Livia Viana  
+- Livia Viana
+
+## 6. Como Compilar e Executar 
+O projeto utiliza o Makefile para compilação e execução e como pré-requisitos tem: 
+- Compilador C++ (g++ ou equivalente) com suporte a C++11 ou superior;
+- make.
+Comandos a serem utilizados (dentro da pasta do projeto):
+- make (compila o projeto);
+- make run (executa o sistema);
+- make clean (limpa arquivos).
+Observação: caso o projeto seja testado manualmente (sem make), é necessário saber o sistema operacional utilizado (Linux, macOS, Windows etc).
+
+## 7. Organização do Projeto 
+A estrutura de diretórios do projeto consiste em: 
+**SRC:** 
+- main.cpp
+- Hospede.cpp
+- Quartos.cpp
+- Reserva.cpp
+- Sistema.cpp
+**Include:**
+- Hospede.h
+- Quartos.h
+- Reserva.h
+- Sistema.h
+**OUTROS:**:
+- Documentação gerada pelo Doxygen (docs/)
+- Makefile
+- README.md
+Os módulos principais, ou seja, os conjuntos de código com uma função específica no programa são:
+- Hospede: gerencia os dados dos hóspedes do hotel (nomes, CPF's, contato, check-in, check-out);
+- Quartos: armazena informações das acomodações do hotel (número, tipo, status);
+- Reserva: armazena informações e estabelece um número para cada reserva feita;
+- Sistema: integra os outros módulos e apresenta o menu principal ao usuário.
+
+## 8. Funcionalidades e Itens Fora do Escopo
