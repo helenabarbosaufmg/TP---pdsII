@@ -11,10 +11,10 @@ private:
     bool ocupado;
 
 public:
-    // 🔹 Construtor padrão (resolve seu erro)
+    //construtor padrão de inicialização (definições)
     Quartos() : numero(0), tipo("Indefinido"), preco(0.0), ocupado(false) {}
 
-    // 🔹 Construtor completo (o que já existia)
+    //construtor completo (o que já existia)
     Quartos(int numero, std::string tipo, double preco);
 
     int QNumero() const;
