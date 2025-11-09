@@ -15,12 +15,14 @@ private:
     std::string status;
 
 public:
+    
     Reserva(int numeroReserva,
             Hospede h,
             Quartos q,
             std::string checkIn,
             std::string checkOut);
 
+   
     int RNumeroReserva() const;
     Hospede RHospede() const;
     Quartos RQuarto() const;
