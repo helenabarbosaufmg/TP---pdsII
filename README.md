@@ -92,7 +92,7 @@ O sistema de gerenciamento de hotel tem como funções:
 **Opção 4 (cadastrar novo quarto)**
 - Entrada:
   
-SISTEMA DO HOTEL
+'''SISTEMA DO HOTEL
 1 - Cadastrar nova reserva
 2 - Pesquisar hóspede pelo número de reserva
 3 - Pesquisar número de reserva
@@ -102,18 +102,20 @@ SISTEMA DO HOTEL
 7 - Liberar quarto
 0 - Sair
 
-Escolha: 4
+Escolha: 4'''
 
-    Cadastro de Quarto
+'''Cadastro do Quarto
     
 Número do quarto: 101
 
 Tipo (ex: Solteiro, Casal, Luxo): Casal
 
 Preço da diária: 250
+
 - Saída:
   
-Quarto cadastrado com sucesso!
+'''Quarto cadastrado com sucesso!'''
+
 
 **Opção 1 (cadastrar nova reserva)**
 
