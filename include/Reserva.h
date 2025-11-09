@@ -10,26 +10,25 @@ private:
     int numeroReserva;
     Hospede hospede;
     Quartos quarto;
-    std::string dataCheckIn;
-    std::string dataCheckOut;
+    std::string checkIn;
+    std::string checkOut;
     std::string status;
-    double valorFinal;
 
 public:
-    Reserva(int numeroReserva, Hospede hospede, Quartos quarto, std::string checkIn, std::string checkOut);
+    
+    Reserva(int numeroReserva,
+            Hospede h,
+            Quartos q,
+            std::string checkIn,
+            std::string checkOut);
 
-    int getNumeroReserva() const;
-    Hospede getHospede() const;
-    Quartos getQuarto() const;
-    std::string getCheckIn() const;
-    std::string getCheckOut() const;
-    std::string getStatus() const;
-    double getValorFinal() const;
-
-    void setStatus(std::string novoStatus);
-    void setValorFinal(double valor);
+   
+    int RNumeroReserva() const;
+    Hospede RHospede() const;
+    Quartos RQuarto() const;
+    std::string RCheckIn() const;
+    std::string RCheckOut() const;
+    std::string RStatus() const;
 };
 
 #endif
-
- 
