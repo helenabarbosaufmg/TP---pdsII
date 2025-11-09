@@ -92,7 +92,9 @@ O sistema de gerenciamento de hotel tem como funções:
 **Opção 4 (cadastrar novo quarto)**
 - Entrada:
   
-`SISTEMA DO HOTEL
+```text 
+
+SISTEMA DO HOTEL
 1 - Cadastrar nova reserva
 2 - Pesquisar hóspede pelo número de reserva
 3 - Pesquisar número de reserva
@@ -102,16 +104,18 @@ O sistema de gerenciamento de hotel tem como funções:
 7 - Liberar quarto
 0 - Sair
 
-Escolha: 4` 
+Escolha: 4
+```
 
-`Cadastro do Quarto
+```text 
+Cadastro do Quarto
     
 Número do quarto: 101
 
 Tipo (ex: Solteiro, Casal, Luxo): Casal
 
 Preço da diária: 250` 
-
+```
 
 - Saída:
   
@@ -121,7 +125,7 @@ Preço da diária: 250`
 **Opção 1 (cadastrar nova reserva)**
 
 - Entrada:
-  
+```text  
 Escolha: 1
 
     Cadastro de Reserva
@@ -141,16 +145,20 @@ Digite o número do quarto para esta reserva: 101
 Data de check-in: 10/11/2025
 
 Data de check-out: 12/11/2025
+```
 
-- Saída: 
+
+- Saída:
+```text 
 Reserva cadastrada com sucesso!
 
 Número da reserva: 1
 
 Quarto: 101
-
+```
 **Opção 2 (pesquisar hóspede pelo número de rserva)** 
-- Entrada: 
+- Entrada:
+```text 
 Escolha: 2
 
 Digite o número da reserva do hóspede: 1
@@ -166,23 +174,24 @@ RG: 1234567
 Telefone: 32988887777
 
 Email: joao@example.com
-
+```
 - Saída (se o número não existir):
+```text 
 Escolha: 2
 
 Digite o número da reserva do hóspede: 99
 
 Hóspede não encontrado para este número de reserva.
-
+```
 **Opção 3 (pesquisar dados completos da reserva)**
 - Entrada:
-  
+```text  
 Escolha: 3
 
 Digite o número da reserva: 1
-
+```
 - Saída (se a reserva existir):
-  
+```text  
 Dados da Reserva
 
 Número da reserva: 1
@@ -211,17 +220,20 @@ Número: 101
 Tipo: Casal
 
 Preço diária: R$ 250
-
+```
 - Saída (se a reserva não existir):
-- 
-Reserva não encontrada.
+  
+`Reserva não encontrada.`
 
 **Opção 5 (Listar status do quarto)**
-- Entrada: 
-Escolha: 5
-- Saída: 
-    Status de Reservas (Lista de Quartos)
+- Entrada:
+  
+`Escolha: 5`
+- Saída:
+```text 
+Status de Reservas (Lista de Quartos)
 Quarto 101 - Tipo: Casal - Preço: R$250 - Status: OCUPADO
+```
 OBS: um quarto sem reserva aparecerá como “DISPONÍVEL”
 
 
