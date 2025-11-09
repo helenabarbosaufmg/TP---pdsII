@@ -82,48 +82,135 @@ O sistema de gerenciamento de hotel tem como funções:
 
 
 ## 9. Itens Fora do Escopo
+
 (...) 
 
-## 10. Instruções de uso 
-Ao executar **make run**, será exibido: 
-SISTEMA DO HOTEL 
-1 - Cadastrar novo hóspede
-2 - Pesquisar hóspede
+## 10. Instruções de Uso 
+
+## 11. Exemplos de Uso (Entradas e Saídas)
+
+**Opção 4 (cadastrar novo quarto)**
+- Entrada: 
+SISTEMA DO HOTEL
+1 - Cadastrar nova reserva
+2 - Pesquisar hóspede pelo número de reserva
 3 - Pesquisar número de reserva
 4 - Cadastrar novo quarto
 5 - Status de reservas (Listar quartos)
 6 - Ocupar quarto
 7 - Liberar quarto
 0 - Sair
-Escolha: 
+Escolha: 4
 
-**CASO 1:** 
-Será exibido: 
-Cadastro de Hóspede
-Código: 
-Nome: 
-RG: 
-Telefone: 
-Email: 
+    Cadastro de Quarto
+Número do quarto: 101
+Tipo (ex: Solteiro, Casal, Luxo): Casal
+Preço da diária: 250
+- Saída: 
+Quarto cadastrado com sucesso!
 
-O usuário deve completar as informações do hóspede e caso seja feito de forma correta, aparecerá: 
-Hóspede cadastrado com sucesso! 
+**Opção 1 (cadastrar nova reserva)**
+- Entrada: 
+Escolha: 1
 
-**CASO 2:**
-Será exibido: 
-Digite o número do código: 
+    Cadastro de Reserva
+Número da reserva (gerado automaticamente): 1
+Nome: João Silva
+RG: 1234567
+Telefone: 32988887777
+Email: joao@example.com
 
-Caso o código seja encontrado, serão exibidas as informações do hóspede correspondente a essa reserva. Caso o código não seja encontrado, será exibido "Hóspede não encontrado". 
+Digite o número do quarto para esta reserva: 101
+Data de check-in: 10/11/2025
+Data de check-out: 12/11/2025
+- Saída: 
+Reserva cadastrada com sucesso!
+Número da reserva: 1
+Quarto: 101
 
-**CASO 3:**
-Será exibido: 
-"Digite o número da reserva: "
-Caso a reserva seja encontrada, aparecerá no menu os dados da reserva (status, check-in, check-out), dados do hóspede e os dados do quarto. Caso a reserva não seja encontrada, será exibido: "Reserva não encontrada."
+**Opção 2 (pesquisar hóspede pelo número de rserva)** 
+- Entrada: 
+Escolha: 2
+Digite o número da reserva do hóspede: 1
+- Saída (se o número existir): 
+Hóspede encontrado:
+Número da reserva: 1
+Nome: João Silva
+RG: 1234567
+Telefone: 32988887777
+Email: joao@example.com
+- Saída (se o número não existir):
+Escolha: 2
+Digite o número da reserva do hóspede: 99
+Hóspede não encontrado para este número de reserva.
 
-**CASO 4:**
-Será exibido: 
-Cadastro de Quarto
-Número do quarto: 
+**Opção 3 (pesquisar dados completos da reserva)**
+- Entrada:
+Escolha: 3
+Digite o número da reserva: 1
+- Saída (se a reserva existir): 
+Dados da Reserva
+Número da reserva: 1
+Status: [status da reserva]
+Check-in: 10/11/2025
+Check-out: 12/11/2025
+
+Hóspede:
+Número de reserva (ID do hóspede): 1
+Nome: João Silva
+RG: 1234567
+Telefone: 32988887777
+Email: joao@example.com
+
+Quarto:
+Número: 101
+Tipo: Casal
+Preço diária: R$ 250
+- Saída (se a reserva não existir): 
+Reserva não encontrada.
+
+**Opção 5 (Listar status do quarto)**
+- Entrada: 
+Escolha: 5
+- Saída: 
+    Status de Reservas (Lista de Quartos)
+Quarto 101 - Tipo: Casal - Preço: R$250 - Status: OCUPADO
+OBS: um quarto sem reserva aparecerá como “DISPONÍVEL”
+
+
+## 12. Programação Defensiva (Malu) 
+(...) 
+
+## 13. Documentação: Doxygen (Helena) 
+(...)
+## 14. Link do Vídeo de Execução
+
+## 15. Equipe e Contribuições
+- Helena Barbosa: responsável pelo desenvolvimento dos arquivos Reserva.h e Sistema.h, desenvolvimento do arquivo Sistema.cpp e modificações no main.cpp relacionadas a funções correspondentes ao sistema do hotel, desenvolvimento da documentação por meio do Doxygen. 
+- Lilla Xavier: responsável pela criação dos arquivos com os cartões CRC e com os requisitos funcionais e não funcionais do código; pelo arquivo Reserva.cpp e por modificar o arquivo main.cpp para que atendesse as funções relacionadas à reserva e pelo desenvolvimento do arquivo README.md. 
+- Lívia Viana: responsável pela estruturação inicial dos diretórios do projeto (src, include etc.), pelo desenvolvimento do arquivo Hospede.cpp e do arquivo main.cpp, que posteriormente foi modificado pelos outros membros, desenvolvimento do arquivo makefile para compilação e execução do projeto. 
+- Maria Luísa Braga: responsável pelo desenvolvimento dos arquivos Hospede.h e Quartos.h, desenvolvimento do arquivo Quartos.cpp e modificações no main.cpp relacionadas a funções correspondentes aos quartos do hotel, inclusão da programação defensiva no código. 
+
+Observação: todos os integrantes participaram da discussão na escolha do tema, no desenvolvimento inicial do ambiente de programação e em modificações e revisões dos códigos e arquivos para a entrega da saída correta e esperada pelo grupo. 
+
+## 16. Ciclo de Desenvolvimento
+- Sprint 1 (05/10 a 09/10): formação da equipe, configuração do GitHub e outros ambientes de desenvolvimento, definição do tema com breve descrição, acesso ao GitHub com um commit teste de cada membro do grupo. 
+- Sprint 2 (09/10 a 23/10): organização inicial dos diretórios do código, levantamento dos requisitos funcionais e não funcionais (User Stories), descrição inicial do funcionamento do sistema (Cartões CRC) e criação dos arquivos .h (Hospede.h; Quartos.h; Reserva.h; Sistema.h)
+- Sprint 3 (23/10 a 11/10): codificação dos arquivos .cpp (main.cpp; Hospede.cpp; Quartos.cpp; Reserva.cpp; Sistema.cpp), desenvolvimento do README.md e da documentação por meio do Doxygen, inclusão de mecanismos para tratar condições de exceção do sistema, revisão do trabalho e desenvolvimento do vídeo de execução. 
+- Sprint 4 (12/11 a 25/11): entrega da apresentação em PDF até dia 12/11 e apresentação em ordem de sorteio dos grupos nos dias 12, 18 e 25 de novembro. 
+
+## 17. Aprendizados: 
+- Algumas funcionalidades que gostaríamos de ter adicionado ao sistema não foram possíveis, devido a impedimentos como o tempo e a dificuldade de realizá-las, por exemplo uma interface gráfica para o sistema de gerenciamento de hotéis. 
+- Dificuldade inicial com o ambiente de desenvolvimento GitHub, devido aos diversos comandos necessários para commitar updates e pelo fato de que foi necessário grande comunicação entre os membros do grupo para que mudanças por pessoas diferentes não fossem feitas ao mesmo tempo, pois nem sempre eram salvos se feitas no mesmo momento. 
+- Retrabalho no desenvolvimento do main.cpp ao perceber que, apesar de estar compilando corretamente, não estava entregando a saída esperada. Assim foram necessárias pequenas mudanças em todo código do main. 
+
+## 18. Evidências no Github: 
+
+- **Commits:** registro de todas as alterações com autoria individual.
+- **Issues:** utilizadas para distribuir tarefas e acompanhar progresso.
+- **Milestones:** criadas para organizar entregas por sprint.
+- **Pull Requests:** revisões e integração de código entre membros.
+- **Release final:** tag `v1.0.0` com código testado, documentação e vídeo de execução.
 
 
 
