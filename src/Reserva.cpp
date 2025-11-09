@@ -1,15 +1,15 @@
 #include "Reserva.h"
 
-Reserva::Reserva(int numero,
+Reserva::Reserva(int numeroReserva,
                  Hospede h,
                  Quartos q,
-                 std::string ci,
-                 std::string co)
-    : numeroReserva(numero), 
+                 std::string checkIn,
+                 std::string checkOut)
+    : numeroReserva(numeroReserva),
       hospede(h),
-      quarto(q),             
-      checkIn(ci),
-      checkOut(co),
+      quarto(q),
+      checkIn(checkIn),
+      checkOut(checkOut),
       status("ATIVA")
 {
 }
