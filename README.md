@@ -58,7 +58,7 @@ Observação: caso o projeto seja testado manualmente (sem make), é necessário
 - Reserva.h
 - Sistema.h
   
-**OUTROS:**:
+**OUTROS:**
 
 - Documentação gerada pelo Doxygen (docs/)
 - Makefile
@@ -90,7 +90,8 @@ O sistema de gerenciamento de hotel tem como funções:
 ## 11. Exemplos de Uso (Entradas e Saídas)
 
 **Opção 4 (cadastrar novo quarto)**
-- Entrada: 
+- Entrada:
+  
 SISTEMA DO HOTEL
 1 - Cadastrar nova reserva
 2 - Pesquisar hóspede pelo número de reserva
@@ -100,73 +101,116 @@ SISTEMA DO HOTEL
 6 - Ocupar quarto
 7 - Liberar quarto
 0 - Sair
+
 Escolha: 4
 
     Cadastro de Quarto
+    
 Número do quarto: 101
+
 Tipo (ex: Solteiro, Casal, Luxo): Casal
+
 Preço da diária: 250
-- Saída: 
+- Saída:
+  
 Quarto cadastrado com sucesso!
 
 **Opção 1 (cadastrar nova reserva)**
-- Entrada: 
+
+- Entrada:
+  
 Escolha: 1
 
     Cadastro de Reserva
+    
 Número da reserva (gerado automaticamente): 1
+
 Nome: João Silva
+
 RG: 1234567
+
 Telefone: 32988887777
+
 Email: joao@example.com
 
 Digite o número do quarto para esta reserva: 101
+
 Data de check-in: 10/11/2025
+
 Data de check-out: 12/11/2025
+
 - Saída: 
 Reserva cadastrada com sucesso!
+
 Número da reserva: 1
+
 Quarto: 101
 
 **Opção 2 (pesquisar hóspede pelo número de rserva)** 
 - Entrada: 
 Escolha: 2
+
 Digite o número da reserva do hóspede: 1
 - Saída (se o número existir): 
 Hóspede encontrado:
+
 Número da reserva: 1
+
 Nome: João Silva
+
 RG: 1234567
+
 Telefone: 32988887777
+
 Email: joao@example.com
+
 - Saída (se o número não existir):
 Escolha: 2
+
 Digite o número da reserva do hóspede: 99
+
 Hóspede não encontrado para este número de reserva.
 
 **Opção 3 (pesquisar dados completos da reserva)**
 - Entrada:
+  
 Escolha: 3
+
 Digite o número da reserva: 1
-- Saída (se a reserva existir): 
+
+- Saída (se a reserva existir):
+  
 Dados da Reserva
+
 Número da reserva: 1
+
 Status: [status da reserva]
+
 Check-in: 10/11/2025
+
 Check-out: 12/11/2025
 
 Hóspede:
 Número de reserva (ID do hóspede): 1
+
 Nome: João Silva
+
 RG: 1234567
+
 Telefone: 32988887777
+
 Email: joao@example.com
 
 Quarto:
+
 Número: 101
+
 Tipo: Casal
+
 Preço diária: R$ 250
-- Saída (se a reserva não existir): 
+
+- Saída (se a reserva não existir):
+- 
 Reserva não encontrada.
 
 **Opção 5 (Listar status do quarto)**
