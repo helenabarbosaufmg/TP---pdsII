@@ -1,16 +1,17 @@
-#include <iostream>
 #include "Reserva.h"
 
-using namespace std; 
-
-Reserva::Reserva(int numero, Hospede h, Quartos q, string checkIn, string checkOut) {
-    numeroReserva = numero;
-    hospede = h;
-    quarto = q;
-    infoCheckIn = checkIn;
-    infoCheckOut = checkOut;
-    status = "Pendente";
-    valorFinal = 0.0;
+Reserva::Reserva(int numeroReserva,
+                 Hospede h,
+                 Quartos q,
+                 std::string checkIn,
+                 std::string checkOut)
+    : numeroReserva(numeroReserva),
+      hospede(h),
+      quarto(q),
+      checkIn(checkIn),
+      checkOut(checkOut),
+      status("ATIVA")
+{
 }
 
 int Reserva::RNumeroReserva() const {
@@ -25,26 +26,14 @@ Quartos Reserva::RQuarto() const {
     return quarto;
 }
 
-string Reserva::RCheckIn() const {
-    return infoCheckIn;
+std::string Reserva::RCheckIn() const {
+    return checkIn;
 }
 
-string Reserva::RCheckOut() const {
-    return infoCheckOut;
+std::string Reserva::RCheckOut() const {
+    return checkOut;
 }
 
-string Reserva::RStatus() const {
+std::string Reserva::RStatus() const {
     return status;
-}
-
-double Reserva::RValorFinal() const {
-    return valorFinal;
-}
-
-void Reserva::StatusFinal(string statusAtualizado) {
-    status = statusAtualizado;
-}
-
-void Reserva::setValorFinal(double valor) {
-    valorFinal = valor;
 }
