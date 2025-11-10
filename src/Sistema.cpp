@@ -13,17 +13,7 @@ bool Sistema::hospedeCadastrado(int codigo) const {
     return false;
 }
 
-<<<<<<< HEAD
-=======
-bool Sistema::quartoCadastrado(int numero) const {
-    for (const Quartos& q : quartos) {
-        if (q.QNumero() == numero) return true;
-    }
-    return false;
-}
 
-
->>>>>>> 09e0472 (Atualizações programação defensiva)
 int Sistema::posicaoHospede(int codigo) const {
     for (std::size_t i = 0; i < hospedes.size(); ++i) {
         if (hospedes[i].HCodigo() == codigo) {
@@ -74,18 +64,8 @@ bool Sistema::reservaSobreposta(int numeroQuarto,
 // Hóspedes
 // -------------------------------------------------
 
-<<<<<<< HEAD
-void Sistema::cadastrarHospede(const Hospede& h) {
-    if (hospedeCadastrado(h.HCodigo())) {
-        cout << "Erro: ja existe hospede com esse codigo." << endl;
-        return;
-    }
-=======
 void Sistema::cadastrarHospede(Hospede h) {
     if (hospedeCadastrado(h.HCodigo())) {
-         throw invalid_argument("Erro: já existe hóspede com este código.");
-    }
-         
         cout << "Erro: ja existe hospede com esse codigo." << endl;
         return;
     }
@@ -102,7 +82,6 @@ void Sistema::cadastrarHospede(Hospede h) {
             return;
         }
     }
->>>>>>> 09e0472 (Atualizações programação defensiva)
 
     hospedes.push_back(h);
     cout << "Hospede cadastrado com sucesso." << endl;
@@ -125,19 +104,11 @@ const Hospede* Sistema::buscarHospedePorCodigo(int codigo) const {
 // Quartos
 // -------------------------------------------------
 
-<<<<<<< HEAD
-void Sistema::cadastrarQuarto(const Quartos& q) {
-=======
 void Sistema::cadastrarQuarto(Quartos q) {
-    throw invalid_argument("Erro: já existe quarto com este número.");
-    }
->>>>>>> 09e0472 (Atualizações programação defensiva)
     if (quartoCadastrado(q.QNumero())) {
         cout << "Erro: ja existe quarto com esse numero." << endl;
         return;
     }
-<<<<<<< HEAD
-=======
     string tipo = q.QTipo();
     for (char& c : tipo) c = toupper(c);
     if (tipo != "Solteiro" && tipo != "Casal" && tipo != "Luxo") {
@@ -150,7 +121,6 @@ void Sistema::cadastrarQuarto(Quartos q) {
         return;
     }
 
->>>>>>> 09e0472 (Atualizações programação defensiva)
 
     quartos.push_back(q);
     cout << "Quarto cadastrado com sucesso!" << endl;
@@ -221,11 +191,7 @@ void Sistema::liberarQuarto(int numeroQuarto) {
 // Reservas
 // -------------------------------------------------
 
-<<<<<<< HEAD
-void Sistema::criarReserva(const Reserva& r) {
-=======
 void Sistema::criarReserva(Reserva r) {
->>>>>>> 09e0472 (Atualizações programação defensiva)
     int codigoHospede = r.RHospede().HCodigo();
     if (!hospedeCadastrado(codigoHospede)) {
         cout << "Erro: hospede nao esta cadastrado." << endl;
@@ -239,8 +205,6 @@ void Sistema::criarReserva(Reserva r) {
         return;
     }
 
-<<<<<<< HEAD
-=======
     string checkIn = r.RCheckIn();
     string checkOut = r.RCheckOut();
     if (checkIn.size() != 10 || checkOut.size() != 10 || checkIn[2] != '/' || checkIn[5] != '/' ||
@@ -250,7 +214,6 @@ void Sistema::criarReserva(Reserva r) {
     }
 
 
->>>>>>> 09e0472 (Atualizações programação defensiva)
     if (reservaSobreposta(numeroQuarto, r.RCheckIn(), r.RCheckOut())) {
         cout << "Erro: ja existe reserva nesse periodo para este quarto." << endl;
         return;

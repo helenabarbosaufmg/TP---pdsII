@@ -3,19 +3,6 @@
 #include <cctype>
 #include "Reserva.h"
 
-<<<<<<< HEAD
-Reserva::Reserva(int numeroReserva,
-                 Hospede h,
-                 Quartos q,
-                 std::string checkIn,
-                 std::string checkOut)
-    : numeroReserva(numeroReserva),
-      hospede(h),
-      quarto(q),
-      checkIn(checkIn),
-      checkOut(checkOut),
-      status("ATIVA") {}
-=======
 using namespace std; 
 
 static bool dataValida(const std::string& data) {
@@ -27,12 +14,9 @@ static bool dataValida(const std::string& data) {
     }
     return true;
 }
->>>>>>> 09e0472 (Atualizações programação defensiva)
-
-
 
 Reserva::Reserva(int numero, Hospede h, Quartos q, std::string checkIn, std::string checkOut)
-    : numeroReserva(numero), hospede(h), quarto(q), infoCheckIn(checkIn), infoCheckOut(checkOut), status("ATIVA") 
+    : numeroReserva(numero), hospede(h), quarto(q), checkIn(checkIn), checkOut(checkOut), status("ATIVA") 
 {
     if (numeroReserva <= 0) throw std::invalid_argument("Erro: número da reserva deve ser positivo.");
     if (!dataValida(checkIn) || !dataValida(checkOut))
@@ -66,6 +50,5 @@ std::string Reserva::RStatus() const {
 
 void Reserva::setStatus(const std::string& novoStatus) {
     status = novoStatus;
+
 }
-
-

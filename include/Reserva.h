@@ -15,19 +15,7 @@ private:
     std::string status;
 
 public:
-<<<<<<< HEAD
-    
-    Reserva(int numeroReserva,
-            Hospede h,
-            Quartos q,
-            std::string checkIn,
-            std::string checkOut);
-=======
-
-    void setStatus(const std::string& novoStatus) { status = novoStatus; }
-
     Reserva(int numeroReserva, Hospede hospede, Quartos quarto, std::string checkIn, std::string checkOut);
->>>>>>> 09e0472 (Atualizações programação defensiva)
 
    
     int RNumeroReserva() const;
