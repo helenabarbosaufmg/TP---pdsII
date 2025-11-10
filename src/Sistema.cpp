@@ -24,7 +24,7 @@ int Sistema::posicaoHospede(int codigo) const {
 
 bool Sistema::quartoCadastrado(int numero) const {
     for (const Quartos& q : quartos) {
-        if (q.getNumero() == numero) {
+        if (q.QNumero() == numero) {
             return true;
         }
     }
@@ -33,7 +33,7 @@ bool Sistema::quartoCadastrado(int numero) const {
 
 int Sistema::posicaoQuarto(int numero) const {
     for (std::size_t i = 0; i < quartos.size(); ++i) {
-        if (quartos[i].getNumero() == numero) {
+        if (quartos[i].QNumero() == numero) {
             return static_cast<int>(i);
         }
     }
@@ -44,7 +44,7 @@ bool Sistema::reservaSobreposta(int numeroQuarto,
                                 const string& checkIn,
                                 const string& checkOut) const {
     for (const Reserva& r : reservas) {
-        if (r.RQuarto().getNumero() == numeroQuarto) {
+        if (r.RQuarto().QNumero() == numeroQuarto) {
 
             const string& inExistente  = r.RCheckIn();
             const string& outExistente = r.RCheckOut();
@@ -91,7 +91,7 @@ const Hospede* Sistema::buscarHospedePorCodigo(int codigo) const {
 // -------------------------------------------------
 
 void Sistema::cadastrarQuarto(const Quartos& q) {
-    if (quartoCadastrado(q.getNumero())) {
+    if (quartoCadastrado(q.QNumero())) {
         cout << "Erro: ja existe quarto com esse numero." << endl;
         return;
     }
@@ -106,7 +106,7 @@ const vector<Quartos>& Sistema::listarQuartos() const {
 
 const Quartos* Sistema::buscarQuartoPorNumero(int numero) const {
     for (const Quartos& q : quartos) {
-        if (q.getNumero() == numero) {
+        if (q.QNumero() == numero) {
             return &q;
         }
     }
@@ -121,9 +121,9 @@ void Sistema::listarStatusQuartos() const {
     }
 
     for (const Quartos& q : quartos) {
-        cout << "Quarto " << q.getNumero()
-             << " - Tipo: " << q.getTipo()
-             << " - Preco: R$ " << q.getPreco()
+        cout << "Quarto " << q.QNumero()
+             << " - Tipo: " << q.QTipo()
+             << " - Preco: R$ " << q.QPreco()
              << " - Status: " << (q.estaOcupado() ? "OCUPADO" : "DISPONIVEL")
              << endl;
     }
@@ -172,7 +172,7 @@ void Sistema::criarReserva(const Reserva& r) {
         return;
     }
 
-    int numeroQuarto = r.RQuarto().getNumero();
+    int numeroQuarto = r.RQuarto().QNumero();
     int posQuarto = posicaoQuarto(numeroQuarto);
     if (posQuarto == -1) {
         cout << "Erro: quarto nao esta cadastrado." << endl;
@@ -245,9 +245,9 @@ void Sistema::mostrarDadosReservaCompleta(int numeroReserva) const {
 
     cout << "\nQuarto:\n";
     Quartos q = r->RQuarto();
-    cout << "Numero: " << q.getNumero() << endl;
-    cout << "Tipo: " << q.getTipo() << endl;
-    cout << "Preco diaria: R$ " << q.getPreco() << endl;
+    cout << "Numero: " << q.QNumero() << endl;
+    cout << "Tipo: " << q.QTipo() << endl;
+    cout << "Preco diaria: R$ " << q.QPreco() << endl;
 }
 
 // -------------------------------------------------
@@ -270,7 +270,7 @@ void Sistema::fazerCheckOut(int numeroReserva) {
         if (r.RNumeroReserva() == numeroReserva) {
             r.setStatus("Concluida");
 
-            int numeroQuarto = r.RQuarto().getNumero();
+            int numeroQuarto = r.RQuarto().QNumero();
             int posQuarto = posicaoQuarto(numeroQuarto);
             if (posQuarto != -1) {
                 quartos[posQuarto].liberar();
@@ -288,7 +288,7 @@ void Sistema::cancelarReserva(int numeroReserva) {
         if (r.RNumeroReserva() == numeroReserva) {
             r.setStatus("Cancelada");
 
-            int numeroQuarto = r.RQuarto().getNumero();
+            int numeroQuarto = r.RQuarto().QNumero();
             int posQuarto = posicaoQuarto(numeroQuarto);
             if (posQuarto != -1) {
                 quartos[posQuarto].liberar();

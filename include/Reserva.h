@@ -15,11 +15,7 @@ private:
     std::string status;
 
 public:
-<<<<<<< HEAD
-    Reserva(int numeroReserva, Hospede hospede, Quartos quarto, const std::string checkIn, const std::string checkOut);
-
-=======
-    
+  
     Reserva(int numeroReserva,
             Hospede h,
             Quartos q,
@@ -27,20 +23,14 @@ public:
             std::string checkOut);
 
    
->>>>>>> main
     int RNumeroReserva() const;
     Hospede RHospede() const;
     Quartos RQuarto() const;
     std::string RCheckIn() const;
     std::string RCheckOut() const;
     std::string RStatus() const;
-<<<<<<< HEAD
-    double RValorFinal() const;
 
     void setStatus(const std::string& novoStatus);
-    void setValorFinal(double valor);
-=======
->>>>>>> main
 };
 
 #endif
