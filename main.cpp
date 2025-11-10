@@ -5,7 +5,6 @@
 #include "Hospede.h"
 #include "Quartos.h"
 #include "Reserva.h"
-#include "Sistema.h"
 
 using namespace std;
 
@@ -25,9 +24,9 @@ int main() {
     do {
         cout << "\n\tSISTEMA DO HOTEL" << endl;
         cout << "1 - Cadastrar novo quarto" << endl;
-        cout << "2 - Pesquisar hóspede pelo número de reserva" << endl; 
+        cout << "2 - Cadastrar novo hóspede no quarto previamente cadastrado" << endl;
         cout << "3 - Pesquisar número de reserva" << endl;
-        cout << "4 - Cadastrar nova reserva" << endl; 
+        cout << "4 - Cadastrar nova reserva de hóspede já cadastrado no sistema" << endl;
         cout << "5 - Status de reservas (Listar quartos)" << endl;
         cout << "6 - Ocupar quarto" << endl;
         cout << "7 - Liberar quarto" << endl;
@@ -182,7 +181,7 @@ int main() {
                 cout << "\nNenhum quarto cadastrado. Cadastre um quarto antes de criar reservas.\n";
             } else {
                 char jaCadastrado;
-                cout << "\nHóspede já cadastrado? (s/n): ";
+                cout << "\nHóspede já está cadastrado no sistema?  ";
                 cin >> jaCadastrado;
                 limparEntrada();
 
