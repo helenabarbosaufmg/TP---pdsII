@@ -4,6 +4,7 @@
 #include "Hospede.h"
 #include "Quartos.h"
 #include "Reserva.h"
+#include "Sistema.h"
 
 using namespace std;
 
@@ -18,8 +19,8 @@ int main() {
     do {
         cout << "\n\tSISTEMA DO HOTEL" << endl;
         cout << "1 - Cadastrar novo quarto" << endl;
-        cout << "2 - Pesquisar hóspede pelo número de reserva" << endl; 
-        cout << "3 - Pesquisar número de reserva" << endl;
+        cout << "2 - Pesquisar hospede pelo numero de reserva" << endl; 
+        cout << "3 - Pesquisar numero de reserva" << endl;
         cout << "4 - Cadastrar nova reserva" << endl; 
         cout << "5 - Status de reservas (Listar quartos)" << endl;
         cout << "6 - Ocupar quarto" << endl;
