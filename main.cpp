@@ -1,22 +1,19 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include <limits>
 #include "Hospede.h"
 #include "Quartos.h"
 #include "Reserva.h"
+#include "Sistema.h"
 
 using namespace std;
 
 int main() {
-    vector<Hospede> hospedes;
-    vector<Quartos> quartos;
-    vector<Reserva> reservas;
-
+    Sistema sistema;
     int opcao;
-    int proximaReserva = 1;      // gera números de reserva automaticamente
-    int proximoHospedeId = 1;    // gera IDs de hóspede
+    int proximaReserva = 1;
 
+    // Funcao para limpar o buffer de entrada
     auto limparEntrada = []() {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     };
@@ -24,9 +21,9 @@ int main() {
     do {
         cout << "\n\tSISTEMA DO HOTEL" << endl;
         cout << "1 - Cadastrar novo quarto" << endl;
-        cout << "2 - Cadastrar novo hóspede no quarto previamente cadastrado" << endl;
-        cout << "3 - Pesquisar número de reserva" << endl;
-        cout << "4 - Cadastrar nova reserva de hóspede já cadastrado no sistema" << endl;
+        cout << "2 - Cadastrar novo hospede no quarto previamente cadastrado" << endl;
+        cout << "3 - Pesquisar numero de reserva" << endl;
+        cout << "4 - Cadastrar nova reserva de hospede ja cadastrado no sistema" << endl;
         cout << "5 - Status de reservas (Listar quartos)" << endl;
         cout << "6 - Ocupar quarto" << endl;
         cout << "7 - Liberar quarto" << endl;
@@ -42,220 +39,122 @@ int main() {
             double preco;
 
             cout << "\n\tCadastro de Quarto\n";
-            cout << "Número do quarto: ";
+            cout << "Numero do quarto: ";
             cin >> numero;
             limparEntrada();
 
             cout << "Tipo (ex: Solteiro, Casal, Luxo): ";
             getline(cin, tipo);
 
-            cout << "Preço da diária: ";
+            cout << "Preco da diaria: ";
             cin >> preco;
             limparEntrada();
 
             Quartos novo(numero, tipo, preco);
-            quartos.push_back(novo);
-
-            cout << "\nQuarto cadastrado com sucesso!\n";
+            sistema.cadastrarQuarto(novo);
         }
 
-        // 2 - Cadastrar novo hóspede no quarto previamente cadastrado
+        // 2 - Cadastrar novo hospede no quarto previamente cadastrado
         else if (opcao == 2) {
+            const auto& quartos = sistema.listarQuartos();
             if (quartos.empty()) {
                 cout << "\nNenhum quarto cadastrado. Cadastre um quarto antes.\n";
             } else {
                 cout << "\nQuartos cadastrados:\n";
-                for (auto &q : quartos) {
+                for (const auto& q : quartos) {
                     cout << "Quarto " << q.QNumero()
                          << " - Tipo: " << q.QTipo()
-                         << " - Preço: R$" << q.QPreco()
-                         << " - Status: " << (q.estaOcupado() ? "OCUPADO" : "DISPONÍVEL")
+                         << " - Preco: R$ " << q.QPreco()
+                         << " - Status: " << (q.estaOcupado() ? "OCUPADO" : "DISPONIVEL")
                          << endl;
                 }
 
                 int numeroQuarto;
-                cout << "\nDigite o número do quarto para este hóspede: ";
+                cout << "\nDigite o numero do quarto para este hospede: ";
                 cin >> numeroQuarto;
                 limparEntrada();
 
-                Quartos* quartoSelecionado = nullptr;
-                for (auto &q : quartos) {
-                    if (q.QNumero() == numeroQuarto) {
-                        quartoSelecionado = &q;
-                        break;
-                    }
-                }
-
+                const Quartos* quartoSelecionado = sistema.buscarQuartoPorNumero(numeroQuarto);
                 if (!quartoSelecionado) {
-                    cout << "Quarto não encontrado.\n";
+                    cout << "Quarto nao encontrado.\n";
                 } else if (quartoSelecionado->estaOcupado()) {
-                    cout << "Quarto já está ocupado. Não é possível alocar novo hóspede.\n";
+                    cout << "Quarto ja esta ocupado. Nao e possivel alocar novo hospede.\n";
                 } else {
+                    int codigo;
                     string nome, rg, telefone, email;
                     string checkIn, checkOut;
 
-                    cout << "\n\tDados do Hóspede\n";
+                    cout << "\n\tDados do Hospede\n";
+                    cout << "Codigo do hospede: ";
+                    cin >> codigo;
+                    limparEntrada();
+
                     cout << "Nome: ";
                     getline(cin, nome);
-
                     cout << "RG: ";
                     getline(cin, rg);
-
                     cout << "Telefone: ";
                     getline(cin, telefone);
-
                     cout << "Email: ";
                     getline(cin, email);
+
+                    Hospede novoHospede(codigo, nome, rg, telefone, email);
+                    sistema.cadastrarHospede(novoHospede);
 
                     cout << "Data de check-in: ";
                     getline(cin, checkIn);
-
                     cout << "Data de check-out: ";
                     getline(cin, checkOut);
 
-                    int idHospede = proximoHospedeId++;
-                    Hospede novoHospede(idHospede, nome, rg, telefone, email);
-                    hospedes.push_back(novoHospede);
-
-                    int numeroReserva = proximaReserva++;
-                    quartoSelecionado->ocupar();
-                    Reserva novaReserva(numeroReserva, novoHospede, *quartoSelecionado, checkIn, checkOut);
-                    reservas.push_back(novaReserva);
-
-                    cout << "\nHóspede cadastrado e alocado com sucesso!" << endl;
-                    cout << "ID do hóspede: " << idHospede << endl;
-                    cout << "Número da reserva: " << numeroReserva << endl;
-                    cout << "Quarto: " << quartoSelecionado->QNumero() << endl;
+                    Reserva novaReserva(proximaReserva++, novoHospede, *quartoSelecionado,
+                                        checkIn, checkOut);
+                    sistema.criarReserva(novaReserva);
                 }
             }
         }
 
-        // 3 - Pesquisar número de reserva
+        // 3 - Pesquisar numero de reserva
         else if (opcao == 3) {
-            if (reservas.empty()) {
-                cout << "\nNenhuma reserva foi cadastrada ainda.\n";
-            } else {
-                int numeroReservaBusca;
-                cout << "\nDigite o número da reserva: ";
-                cin >> numeroReservaBusca;
-                limparEntrada();
+            int numeroReservaBusca;
+            cout << "\nDigite o numero da reserva: ";
+            cin >> numeroReservaBusca;
+            limparEntrada();
 
-                bool encontrada = false;
-                for (auto &r : reservas) {
-                    if (r.RNumeroReserva() == numeroReservaBusca) {
-                        Hospede h = r.RHospede();
-                        Quartos q = r.RQuarto();
-
-                        cout << "\nDados da Reserva\n";
-                        cout << "Número da reserva: " << r.RNumeroReserva() << endl;
-                        cout << "Status: " << r.RStatus() << endl;
-                        cout << "Check-in: " << r.RCheckIn() << endl;
-                        cout << "Check-out: " << r.RCheckOut() << endl;
-
-                        cout << "\nHóspede:\n";
-                        cout << "ID: " << h.HCodigo() << endl;
-                        cout << "Nome: " << h.HNome() << endl;
-                        cout << "RG: " << h.HRG() << endl;
-                        cout << "Telefone: " << h.HTelefone() << endl;
-                        cout << "Email: " << h.HEmail() << endl;
-
-                        cout << "\nQuarto:\n";
-                        cout << "Número: " << q.QNumero() << endl;
-                        cout << "Tipo: " << q.QTipo() << endl;
-                        cout << "Preço diária: R$ " << q.QPreco() << endl;
-
-                        encontrada = true;
-                        break;
-                    }
-                }
-
-                if (!encontrada) {
-                    cout << "Reserva não encontrada.\n";
-                }
-            }
+            sistema.mostrarDadosReservaCompleta(numeroReservaBusca);
         }
 
-        // 4 - Cadastrar nova reserva
+        // 4 - Cadastrar nova reserva de hospede ja cadastrado no sistema
         else if (opcao == 4) {
-            if (quartos.empty()) {
-                cout << "\nNenhum quarto cadastrado. Cadastre um quarto antes de criar reservas.\n";
+            if (sistema.listarQuartos().empty() || sistema.listarHospedes().empty()) {
+                cout << "\nE preciso ter ao menos um hospede e um quarto cadastrados.\n";
             } else {
-                char jaCadastrado;
-                cout << "\nHóspede já está cadastrado no sistema?  ";
-                cin >> jaCadastrado;
+                int codigoHospede;
+                cout << "Codigo do hospede (ja cadastrado): ";
+                cin >> codigoHospede;
                 limparEntrada();
 
-                Hospede hospedeEscolhido(0, "", "", "", "");
-                bool hospedeValido = false;
-
-                if (jaCadastrado == 's' || jaCadastrado == 'S') {
-                    int id;
-                    cout << "Informe o ID do hóspede: ";
-                    cin >> id;
-                    limparEntrada();
-
-                    for (auto &h : hospedes) {
-                        if (h.HCodigo() == id) {
-                            hospedeEscolhido = h;
-                            hospedeValido = true;
-                            break;
-                        }
-                    }
-
-                    if (!hospedeValido) {
-                        cout << "Hóspede não encontrado.\n";
-                    }
+                const Hospede* h = sistema.buscarHospedePorCodigo(codigoHospede);
+                if (!h) {
+                    cout << "Hospede nao encontrado. Reserva nao cadastrada.\n";
                 } else {
-                    string nome, rg, telefone, email;
-                    cout << "\n\tCadastro de novo hóspede\n";
-                    cout << "Nome: ";
-                    getline(cin, nome);
-                    cout << "RG: ";
-                    getline(cin, rg);
-                    cout << "Telefone: ";
-                    getline(cin, telefone);
-                    cout << "Email: ";
-                    getline(cin, email);
-
-                    int idHospede = proximoHospedeId++;
-                    Hospede novoHospede(idHospede, nome, rg, telefone, email);
-                    hospedes.push_back(novoHospede);
-                    hospedeEscolhido = novoHospede;
-                    hospedeValido = true;
-
-                    cout << "Hóspede cadastrado com ID: " << idHospede << endl;
-                }
-
-                if (!hospedeValido) {
-                    // algo deu errado na seleção/criação
-                    // volta ao menu
-                } else {
-                    cout << "\nQuartos disponíveis:\n";
-                    for (auto &q : quartos) {
+                    const auto& quartos = sistema.listarQuartos();
+                    cout << "\nQuartos cadastrados:\n";
+                    for (const auto& q : quartos) {
                         cout << "Quarto " << q.QNumero()
                              << " - Tipo: " << q.QTipo()
-                             << " - Preço: R$" << q.QPreco()
-                             << " - Status: " << (q.estaOcupado() ? "OCUPADO" : "DISPONÍVEL")
+                             << " - Preco: R$ " << q.QPreco()
+                             << " - Status: " << (q.estaOcupado() ? "OCUPADO" : "DISPONIVEL")
                              << endl;
                     }
 
                     int numeroQuarto;
-                    cout << "\nDigite o número do quarto para a reserva: ";
+                    cout << "\nDigite o numero do quarto para a reserva: ";
                     cin >> numeroQuarto;
                     limparEntrada();
 
-                    Quartos* quartoSelecionado = nullptr;
-                    for (auto &q : quartos) {
-                        if (q.QNumero() == numeroQuarto) {
-                            quartoSelecionado = &q;
-                            break;
-                        }
-                    }
-
-                    if (!quartoSelecionado) {
-                        cout << "Quarto não encontrado. Reserva não cadastrada.\n";
-                    } else if (quartoSelecionado->estaOcupado()) {
-                        cout << "Quarto já está ocupado. Reserva não cadastrada.\n";
+                    const Quartos* q = sistema.buscarQuartoPorNumero(numeroQuarto);
+                    if (!q) {
+                        cout << "Quarto nao encontrado. Reserva nao cadastrada.\n";
                     } else {
                         string checkIn, checkOut;
                         cout << "Data de check-in: ";
@@ -263,14 +162,8 @@ int main() {
                         cout << "Data de check-out: ";
                         getline(cin, checkOut);
 
-                        int numeroReserva = proximaReserva++;
-                        quartoSelecionado->ocupar();
-                        Reserva novaReserva(numeroReserva, hospedeEscolhido, *quartoSelecionado, checkIn, checkOut);
-                        reservas.push_back(novaReserva);
-
-                        cout << "\nReserva cadastrada com sucesso!" << endl;
-                        cout << "Número da reserva: " << numeroReserva << endl;
-                        cout << "Quarto: " << quartoSelecionado->QNumero() << endl;
+                        Reserva novaReserva(proximaReserva++, *h, *q, checkIn, checkOut);
+                        sistema.criarReserva(novaReserva);
                     }
                 }
             }
@@ -278,74 +171,33 @@ int main() {
 
         // 5 - Status de reservas (listar quartos)
         else if (opcao == 5) {
-            cout << "\n\tStatus de Reservas (Lista de Quartos)\n";
-            if (quartos.empty()) {
-                cout << "Nenhum quarto cadastrado.\n";
-            } else {
-                for (auto &q : quartos) {
-                    cout << "Quarto " << q.QNumero()
-                         << " - Tipo: " << q.QTipo()
-                         << " - Preço: R$" << q.QPreco()
-                         << " - Status: "
-                         << (q.estaOcupado() ? "OCUPADO" : "DISPONÍVEL")
-                         << endl;
-                }
-            }
+            sistema.listarStatusQuartos();
         }
 
-        // 6 - Ocupar quarto (manual)
+        // 6 - Ocupar quarto
         else if (opcao == 6) {
             int numero;
-            cout << "\nNúmero do quarto a ocupar: ";
+            cout << "\nNumero do quarto a ocupar: ";
             cin >> numero;
             limparEntrada();
-
-            bool encontrado = false;
-            for (auto &q : quartos) {
-                if (q.QNumero() == numero) {
-                    if (q.estaOcupado()) {
-                        cout << "Este quarto já está ocupado.\n";
-                    } else {
-                        q.ocupar();
-                        cout << "Quarto " << numero << " agora está ocupado.\n";
-                    }
-                    encontrado = true;
-                    break;
-                }
-            }
-            if (!encontrado)
-                cout << "Quarto não encontrado.\n";
+            sistema.ocuparQuarto(numero);
         }
 
         // 7 - Liberar quarto
         else if (opcao == 7) {
             int numero;
-            cout << "\nNúmero do quarto a liberar: ";
+            cout << "\nNumero do quarto a liberar: ";
             cin >> numero;
             limparEntrada();
-
-            bool encontrado = false;
-            for (auto &q : quartos) {
-                if (q.QNumero() == numero) {
-                    if (!q.estaOcupado()) {
-                        cout << "Este quarto já está livre.\n";
-                    } else {
-                        q.liberar();
-                        cout << "Quarto " << numero << " foi liberado.\n";
-                    }
-                    encontrado = true;
-                    break;
-                }
-            }
-            if (!encontrado)
-                cout << "Quarto não encontrado.\n";
+            sistema.liberarQuarto(numero);
         }
 
         else if (opcao != 0) {
-            cout << "Opção inválida.\n";
+            cout << "Opcao invalida.\n";
         }
 
     } while (opcao != 0);
 
+    cout << "Saindo do sistema...\n";
     return 0;
 }
