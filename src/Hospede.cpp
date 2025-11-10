@@ -1,6 +1,14 @@
 #include "Hospede.h"
 #include <iostream>
+#include <stdexcept>
+#include <algorithm>
+#include <cctype>
 using namespace std;
+
+static bool somenteNumeros(const string& str) {
+    return !str.empty() && all_of(str.begin(), str.end(), ::isdigit);
+}
+
 
 Hospede::Hospede() {
     codigo = 0;
@@ -11,6 +19,11 @@ Hospede::Hospede() {
 } //hospede vazio
 
 Hospede::Hospede(int codigo, const string& nome, const string& rg, const string& telefone, const string& email) {
+    if (nome.empty()) throw invalid_argument("Erro: nome não pode ser vazio.");
+    if (!somenteNumeros(rg)) throw invalid_argument("Erro: RG deve conter apenas números.");
+    if (!somenteNumeros(telefone)) throw invalid_argument("Erro: telefone deve conter apenas números.");
+    if (email.find('@') == string::npos) throw invalid_argument("Erro: e-mail inválido.");
+
     this->codigo = codigo;
     this->nome = nome;
     this->rg = rg;
@@ -43,10 +56,14 @@ void Hospede::H_Nome(const string& nome) {
 }
 
 void Hospede::H_RG(const string& rg) {
+     if (!somenteNumeros(rg)) throw invalid_argument("Erro: RG inválido — use apenas números.");
+    this->rg = rg;
     this->rg = rg;
 }
 
 void Hospede::H_Telefone(const string& telefone) {
+    if (!somenteNumeros(telefone)) throw invalid_argument("Erro: telefone inválido — use apenas números.");
+    this->telefone = telefone;
     this->telefone = telefone;
 }
 
