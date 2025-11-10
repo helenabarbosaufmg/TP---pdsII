@@ -11,10 +11,14 @@ private:
     bool ocupado;
 
 public:
+<<<<<<< HEAD
     //construtor padrão de inicialização (definições)
     Quartos() : numero(0), tipo("Indefinido"), preco(0.0), ocupado(false) {}
 
     //construtor completo (o que já existia)
+=======
+    Quartos() : numero(0), tipo("Indefinido"), preco(0.0), ocupado(false) {}
+>>>>>>> 09e0472 (Atualizações programação defensiva)
     Quartos(int numero, std::string tipo, double preco);
 
     int QNumero() const;
