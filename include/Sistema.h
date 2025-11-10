@@ -2,6 +2,7 @@
 #define SISTEMA_H
 
 #include <vector>
+#include <string>
 #include "Hospede.h"
 #include "Quartos.h"
 #include "Reserva.h"
@@ -12,17 +13,30 @@ private:
     std::vector<Quartos> quartos;
     std::vector<Reserva> reservas;
 
+    bool hospedeCadastrado(int codigo) const;
+    int  posicaoHospede(int codigo) const;
+
+    bool quartoCadastrado(int numero) const;
+    int  posicaoQuarto(int numero) const;
+
+    bool reservaSobreposta(int numeroQuarto,
+        const std::string& checkIn,
+        const std::string& checkOut) const;
+
 public:
     Sistema(); 
 
-    void cadastrarHospede(Hospede h);
-    std::vector<Hospede> listarHospedes() const;
+    void cadastrarHospede(const Hospede& h);
+    const std::vector<Hospede>& listarHospedes() const;
+    const Hospede* buscarHospedePorCodigo (int codigo) const;
+     
 
-    void cadastrarQuarto(Quartos q);
-    std::vector<Quartos> listarQuartos() const;
+    void cadastrarQuarto(const Quartos& q);
+    const std::vector<Quartos>& listarQuartos() const;
+    const Quartos* buscarQuartoPorNumero(int numero) const;
 
-    void criarReserva(Reserva r);
-    std::vector<Reserva> listarReservas() const;
+    void criarReserva(const Reserva& r);
+    const std::vector<Reserva>& listarReservas() const;
 
     void fazerCheckIn(int numeroReserva);
     void fazerCheckOut(int numeroReserva);
