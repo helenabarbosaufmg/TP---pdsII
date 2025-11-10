@@ -15,7 +15,7 @@ private:
     std::string status;
 
 public:
-  
+    
     Reserva(int numeroReserva,
             Hospede h,
             Quartos q,
