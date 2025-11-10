@@ -44,10 +44,10 @@ bool Sistema::reservaSobreposta(int numeroQuarto,
                                 const string& checkIn,
                                 const string& checkOut) const {
     for (const Reserva& r : reservas) {
-        if (r.getQuarto().getNumero() == numeroQuarto) {
+        if (r.RQuarto().getNumero() == numeroQuarto) {
 
-            const string& inExistente  = r.getCheckIn();
-            const string& outExistente = r.getCheckOut();
+            const string& inExistente  = r.RCheckIn();
+            const string& outExistente = r.RCheckOut();
 
             bool semConflito = (checkOut <= inExistente) || (checkIn >= outExistente);
 
@@ -65,12 +65,12 @@ bool Sistema::reservaSobreposta(int numeroQuarto,
 
 void Sistema::cadastrarHospede(const Hospede& h) {
     if (hospedeCadastrado(h.HCodigo())) {
-        cout << "Erro: já existe hóspede com esse código." << endl;
+        cout << "Erro: ja existe hospede com esse codigo." << endl;
         return;
     }
 
     hospedes.push_back(h);
-    cout << "Hóspede cadastrado com sucesso." << endl;
+    cout << "Hospede cadastrado com sucesso." << endl;
 }
 
 const vector<Hospede>& Sistema::listarHospedes() const {
@@ -92,7 +92,7 @@ const Hospede* Sistema::buscarHospedePorCodigo(int codigo) const {
 
 void Sistema::cadastrarQuarto(const Quartos& q) {
     if (quartoCadastrado(q.getNumero())) {
-        cout << "Erro: já existe quarto com esse número." << endl;
+        cout << "Erro: ja existe quarto com esse numero." << endl;
         return;
     }
 
@@ -112,27 +112,75 @@ const Quartos* Sistema::buscarQuartoPorNumero(int numero) const {
     }
     return nullptr;
 }
+void Sistema::listarStatusQuartos() const {
+    cout << "\nStatus de Reservas (Lista de Quartos)\n";
+
+    if (quartos.empty()) {
+        cout << "Nenhum quarto cadastrado.\n";
+        return;
+    }
+
+    for (const Quartos& q : quartos) {
+        cout << "Quarto " << q.getNumero()
+             << " - Tipo: " << q.getTipo()
+             << " - Preco: R$ " << q.getPreco()
+             << " - Status: " << (q.estaOcupado() ? "OCUPADO" : "DISPONIVEL")
+             << endl;
+    }
+}
+
+void Sistema::ocuparQuarto(int numeroQuarto) {
+    int pos = posicaoQuarto(numeroQuarto);
+    if (pos == -1) {
+        cout << "Quarto nao encontrado.\n";
+        return;
+    }
+
+    if (quartos[pos].estaOcupado()) {
+        cout << "Quarto " << numeroQuarto << " ja esta OCUPADO.\n";
+        return;
+    }
+
+    quartos[pos].ocupar();
+    cout << "Quarto " << numeroQuarto << " agora esta OCUPADO.\n";
+}
+
+void Sistema::liberarQuarto(int numeroQuarto) {
+    int pos = posicaoQuarto(numeroQuarto);
+    if (pos == -1) {
+        cout << "Quarto nao encontrado.\n";
+        return;
+    }
+
+    if (!quartos[pos].estaOcupado()) {
+        cout << "Quarto " << numeroQuarto << " ja esta DISPONIVEL.\n";
+        return;
+    }
+
+    quartos[pos].liberar();
+    cout << "Quarto " << numeroQuarto << " agora esta DISPONIVEL.\n";
+}
 
 // -------------------------------------------------
 // Reservas
 // -------------------------------------------------
 
 void Sistema::criarReserva(const Reserva& r) {
-    int codigoHospede = r.getHospede().HCodigo();
+    int codigoHospede = r.RHospede().HCodigo();
     if (!hospedeCadastrado(codigoHospede)) {
-        cout << "Erro: hóspede não está cadastrado." << endl;
+        cout << "Erro: hospede nao esta cadastrado." << endl;
         return;
     }
 
-    int numeroQuarto = r.getQuarto().getNumero();
+    int numeroQuarto = r.RQuarto().getNumero();
     int posQuarto = posicaoQuarto(numeroQuarto);
     if (posQuarto == -1) {
-        cout << "Erro: quarto não está cadastrado." << endl;
+        cout << "Erro: quarto nao esta cadastrado." << endl;
         return;
     }
 
-    if (reservaSobreposta(numeroQuarto, r.getCheckIn(), r.getCheckOut())) {
-        cout << "Erro: já existe reserva nesse período para este quarto." << endl;
+    if (reservaSobreposta(numeroQuarto, r.RCheckIn(), r.RCheckOut())) {
+        cout << "Erro: ja existe reserva nesse periodo para este quarto." << endl;
         return;
     }
 
@@ -147,27 +195,82 @@ const vector<Reserva>& Sistema::listarReservas() const {
     return reservas;
 }
 
+const Reserva* Sistema::buscarReservaPorNumero(int numeroReserva) const {
+    for (const Reserva& r : reservas) {
+        if (r.RNumeroReserva() == numeroReserva) {
+            return &r;
+        }
+    }
+    return nullptr;
+}
+
+// Opcao 2: pesquisar hospede pelo numero da reserva
+void Sistema::mostrarHospedePorReserva(int numeroReserva) const {
+    const Reserva* r = buscarReservaPorNumero(numeroReserva);
+    if (!r) {
+        cout << "Hospede nao encontrado para este numero de reserva." << endl;
+        return;
+    }
+
+    Hospede h = r->RHospede();
+
+    cout << "\nHospede encontrado:\n";
+    cout << "Numero da reserva: " << r->RNumeroReserva() << endl;
+    cout << "Nome: " << h.HNome() << endl;
+    cout << "RG: " << h.HRG() << endl;
+    cout << "Telefone: " << h.HTelefone() << endl;
+    cout << "Email: " << h.HEmail() << endl;
+}
+
+// Opcao 3: pesquisar dados completos da reserva
+void Sistema::mostrarDadosReservaCompleta(int numeroReserva) const {
+    const Reserva* r = buscarReservaPorNumero(numeroReserva);
+    if (!r) {
+        cout << "Reserva nao encontrada." << endl;
+        return;
+    }
+
+    cout << "\nDados da Reserva\n";
+    cout << "Numero da reserva: " << r->RNumeroReserva() << endl;
+    cout << "Status: " << r->RStatus() << endl;
+    cout << "Check-in: " << r->RCheckIn() << endl;
+    cout << "Check-out: " << r->RCheckOut() << endl;
+
+    cout << "\nHospede:\n";
+    Hospede h = r->RHospede();
+    cout << "Nome: " << h.HNome() << endl;
+    cout << "RG: " << h.HRG() << endl;
+    cout << "Telefone: " << h.HTelefone() << endl;
+    cout << "Email: " << h.HEmail() << endl;
+
+    cout << "\nQuarto:\n";
+    Quartos q = r->RQuarto();
+    cout << "Numero: " << q.getNumero() << endl;
+    cout << "Tipo: " << q.getTipo() << endl;
+    cout << "Preco diaria: R$ " << q.getPreco() << endl;
+}
+
 // -------------------------------------------------
 // Check-in, check-out e cancelamento
 // -------------------------------------------------
 
 void Sistema::fazerCheckIn(int numeroReserva) {
     for (Reserva& r : reservas) {
-        if (r.getNumeroReserva() == numeroReserva) {
+        if (r.RNumeroReserva() == numeroReserva) {
             r.setStatus("Em andamento");
             cout << "Check-in realizado com sucesso." << endl;
             return;
         }
     }
-    cout << "Reserva não encontrada." << endl;
+    cout << "Reserva nao encontrada." << endl;
 }
 
 void Sistema::fazerCheckOut(int numeroReserva) {
     for (Reserva& r : reservas) {
-        if (r.getNumeroReserva() == numeroReserva) {
-            r.setStatus("Concluída");
+        if (r.RNumeroReserva() == numeroReserva) {
+            r.setStatus("Concluida");
 
-            int numeroQuarto = r.getQuarto().getNumero();
+            int numeroQuarto = r.RQuarto().getNumero();
             int posQuarto = posicaoQuarto(numeroQuarto);
             if (posQuarto != -1) {
                 quartos[posQuarto].liberar();
@@ -177,15 +280,15 @@ void Sistema::fazerCheckOut(int numeroReserva) {
             return;
         }
     }
-    cout << "Reserva não encontrada." << endl;
+    cout << "Reserva nao encontrada." << endl;
 }
 
 void Sistema::cancelarReserva(int numeroReserva) {
     for (Reserva& r : reservas) {
-        if (r.getNumeroReserva() == numeroReserva) {
+        if (r.RNumeroReserva() == numeroReserva) {
             r.setStatus("Cancelada");
 
-            int numeroQuarto = r.getQuarto().getNumero();
+            int numeroQuarto = r.RQuarto().getNumero();
             int posQuarto = posicaoQuarto(numeroQuarto);
             if (posQuarto != -1) {
                 quartos[posQuarto].liberar();
@@ -195,5 +298,5 @@ void Sistema::cancelarReserva(int numeroReserva) {
             return;
         }
     }
-    cout << "Reserva não encontrada." << endl;
+    cout << "Reserva nao encontrada." << endl;
 }

@@ -34,9 +34,15 @@ public:
     void cadastrarQuarto(const Quartos& q);
     const std::vector<Quartos>& listarQuartos() const;
     const Quartos* buscarQuartoPorNumero(int numero) const;
+    void listarStatusQuartos() const;
+    void ocuparQuarto(int numeroQuarto);
+    void liberarQuarto(int numeroQuarto);
 
     void criarReserva(const Reserva& r);
     const std::vector<Reserva>& listarReservas() const;
+    const Reserva* buscarReservaPorNumero(int numeroReserva) const;
+    void mostrarHospedePorReserva(int numeroReserva) const;
+    void mostrarDadosReservaCompleta(int numeroReserva) const;
 
     void fazerCheckIn(int numeroReserva);
     void fazerCheckOut(int numeroReserva);

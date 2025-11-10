@@ -4,8 +4,8 @@
 Reserva::Reserva(int numeroReserva,
                  Hospede h,
                  Quartos q,
-                 std::string checkIn,
-                 std::string checkOut)
+                 const std::string checkIn,
+                 const std::string checkOut)
     : numeroReserva(numeroReserva),
       hospede(h),
       quarto(q),
