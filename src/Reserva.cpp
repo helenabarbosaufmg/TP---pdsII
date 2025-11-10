@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 #include <iostream>
+=======
+>>>>>>> main
 #include "Reserva.h"
 
 Reserva::Reserva(int numeroReserva,
                  Hospede h,
                  Quartos q,
+<<<<<<< HEAD
                  const std::string checkIn,
                  const std::string checkOut)
+=======
+                 std::string checkIn,
+                 std::string checkOut)
+>>>>>>> main
     : numeroReserva(numeroReserva),
       hospede(h),
       quarto(q),
@@ -38,7 +46,10 @@ std::string Reserva::RCheckOut() const {
 std::string Reserva::RStatus() const {
     return status;
 }
+<<<<<<< HEAD
 
 void Reserva::setStatus(const std::string& novoStatus) {
     status = novoStatus;
 }
+=======
+>>>>>>> main
