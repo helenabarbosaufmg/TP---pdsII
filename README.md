@@ -456,8 +456,8 @@ Observação: todos os integrantes participaram da discussão na escolha do tema
 ## 18. Evidências no Github: 
 
 - **Commits:**
-- ![grafico commits over time]("graficos/Commits%20over%20time.png")
-- ![helenabarbosaufmg's Commits]("graficos/helenabarbosaufmg's%20Commits.png")
-- ![lilladelucas25's Commits]("graficos/lilladelucas25's%20Commits.png")
-- ![liviafviana's Commits]("graficos/liviafviana's%20Commits.png")
-- ![marialuisabraga-ux's Commits]("marialuisabraga-ux's%20Commits.png")
+- ![grafico commits over time](graficos/Commits_over_time.png)
+- ![helenabarbosaufmg's Commits](graficos/helenabarbosaufmg_Commits.png)
+- ![lilladelucas25's Commits](graficos/lilladelucas25_Commits.png)
+- ![liviafviana's Commits](graficos/liviafviana_Commits.png)
+- ![marialuisabraga-ux's Commits](marialuisabraga-ux_Commits.png)
