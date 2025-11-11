@@ -23,6 +23,8 @@ public:
     std::string RCheckIn() const;
     std::string RCheckOut() const;
     std::string RStatus() const;
+	void setStatus(const std::string& novoStatus);
+    const std::string& getStatus() const;
 };
 
 #endif

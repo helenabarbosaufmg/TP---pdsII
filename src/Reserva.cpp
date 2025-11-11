@@ -37,3 +37,11 @@ std::string Reserva::RCheckOut() const {
 std::string Reserva::RStatus() const {
     return status;
 }
+
+void Reserva::setStatus(const std::string& novoStatus) {
+    status = novoStatus;
+}
+
+const std::string& Reserva::getStatus() const {
+    return status;
+}
