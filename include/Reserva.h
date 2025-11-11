@@ -67,10 +67,6 @@ public:
      * \return Status da reserva (ativa, concluída ou cancelada).
      */
     std::string RStatus() const;
-<<<<<<< HEAD
-	void setStatus(const std::string& novoStatus);
-    const std::string& getStatus() const;
-=======
     
     /**
      * \brief Define ou altera o status da reserva.
@@ -78,7 +74,6 @@ public:
      */
 
     void setStatus(const std::string& novoStatus);
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
 };
 
 #endif

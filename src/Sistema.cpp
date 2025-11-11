@@ -153,9 +153,6 @@ const Hospede* Sistema::buscarHospedePorCodigo(int codigo) const {
 // Quartos
 // -------------------------------------------------
 
-<<<<<<< HEAD
-void Sistema::cadastrarQuarto(const Quartos& q) {
-=======
 /**
  * \brief Cadastra um novo quarto no sistema.
  * \details Verifica se já existe quarto com o mesmo número, se o tipo é válido
@@ -163,7 +160,6 @@ void Sistema::cadastrarQuarto(const Quartos& q) {
  * \param q Objeto do tipo Quartos a ser cadastrado.
  */
 void Sistema::cadastrarQuarto(Quartos q) {
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
     if (quartoCadastrado(q.QNumero())) {
         cout << "Erro: ja existe quarto com esse numero." << endl;
         return;
@@ -320,9 +316,6 @@ void Sistema::liberarQuarto(int numeroQuarto) {
 // Reservas
 // -------------------------------------------------
 
-<<<<<<< HEAD
-void Sistema::criarReserva(const Reserva& r) {
-=======
 /**
  * \brief Cria uma nova reserva no sistema.
  * \details Verifica se o hóspede e o quarto estão cadastrados, valida o formato das datas
@@ -330,7 +323,6 @@ void Sistema::criarReserva(const Reserva& r) {
  * \param r Objeto do tipo Reserva a ser criado.
  */
 void Sistema::criarReserva(Reserva r) {
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
     int codigoHospede = r.RHospede().HCodigo();
     if (!hospedeCadastrado(codigoHospede)) {
         cout << "Erro: hospede nao esta cadastrado." << endl;
@@ -344,8 +336,6 @@ void Sistema::criarReserva(Reserva r) {
         return;
     }
 
-<<<<<<< HEAD
-=======
     string checkIn = r.RCheckIn();
     string checkOut = r.RCheckOut();
     if (checkIn.size() != 10 || checkOut.size() != 10 || checkIn[2] != '/' || checkIn[5] != '/' ||
@@ -355,7 +345,6 @@ void Sistema::criarReserva(Reserva r) {
     }
 
 
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
     if (reservaSobreposta(numeroQuarto, r.RCheckIn(), r.RCheckOut())) {
         cout << "Erro: ja existe reserva nesse periodo para este quarto." << endl;
         return;
@@ -376,14 +365,11 @@ const vector<Reserva>& Sistema::listarReservas() const {
     return reservas;
 }
 
-<<<<<<< HEAD
-=======
 /**
  * \brief Busca uma reserva pelo número identificador.
  * \param numeroReserva Número da reserva.
  * \return Ponteiro constante para a reserva encontrada, ou nullptr se não existir.
  */
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
 const Reserva* Sistema::buscarReservaPorNumero(int numeroReserva) const {
     for (const Reserva& r : reservas) {
         if (r.RNumeroReserva() == numeroReserva) {
@@ -394,13 +380,10 @@ const Reserva* Sistema::buscarReservaPorNumero(int numeroReserva) const {
 }
 
 // Opcao 2: pesquisar hospede pelo numero da reserva
-<<<<<<< HEAD
-=======
 /**
  * \brief Exibe os dados do hóspede associado a uma determinada reserva.
  * \param numeroReserva Número da reserva usada para encontrar o hóspede.
  */
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
 void Sistema::mostrarHospedePorReserva(int numeroReserva) const {
     const Reserva* r = buscarReservaPorNumero(numeroReserva);
     if (!r) {
@@ -419,13 +402,10 @@ void Sistema::mostrarHospedePorReserva(int numeroReserva) const {
 }
 
 // Opcao 3: pesquisar dados completos da reserva
-<<<<<<< HEAD
-=======
 /**
  * \brief Exibe todas as informações completas de uma reserva.
  * \param numeroReserva Número da reserva a ser exibida.
  */
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
 void Sistema::mostrarDadosReservaCompleta(int numeroReserva) const {
     const Reserva* r = buscarReservaPorNumero(numeroReserva);
     if (!r) {
@@ -517,8 +497,4 @@ void Sistema::cancelarReserva(int numeroReserva) {
         }
     }
     cout << "Reserva nao encontrada." << endl;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e

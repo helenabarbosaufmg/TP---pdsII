@@ -89,14 +89,6 @@ std::string Reserva::RStatus() const {
     return status;
 }
 
-<<<<<<< HEAD
-void Reserva::setStatus(const std::string& novoStatus) {
-    status = novoStatus;
-}
-
-const std::string& Reserva::getStatus() const {
-    return status;
-=======
 /**
  * \brief Define um novo status para a reserva.
  * \param novoStatus Novo status a ser atribuído (ex: "CONCLUÍDA" ou "CANCELADA").
@@ -104,5 +96,4 @@ const std::string& Reserva::getStatus() const {
 void Reserva::setStatus(const std::string& novoStatus) {
     status = novoStatus;
 
->>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
 }
