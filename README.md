@@ -89,152 +89,27 @@ O sistema de gerenciamento de hotel tem como funções:
 
 ## 11. Exemplos de Uso (Entradas e Saídas)
 
-**Opção 4 (cadastrar novo quarto)**
-- Entrada:
-  
-```text 
-
-SISTEMA DO HOTEL
-1 - Cadastrar nova reserva
-2 - Pesquisar hóspede pelo número de reserva
-3 - Pesquisar número de reserva
-4 - Cadastrar novo quarto
-5 - Status de reservas (Listar quartos)
-6 - Ocupar quarto
-7 - Liberar quarto
-0 - Sair
-
-Escolha: 4
+**Opção 1 (cadastrar novo quarto)**
+```
+Entrada: 1
 ```
 
-```text 
-Cadastro do Quarto
-    
-Número do quarto: 101
-
+```
+Saida: 
+Cadastro de Quarto
+Numero do quarto: 01
 Tipo (ex: Solteiro, Casal, Luxo): Casal
-
-Preço da diária: 250` 
+Preco da diaria: 120
 ```
-
-- Saída:
-  
-`Quarto cadastrado com sucesso!`
-
-
-**Opção 1 (cadastrar nova reserva)**
-
-- Entrada:
-```text  
-Escolha: 1
-
-    Cadastro de Reserva
-    
-Número da reserva (gerado automaticamente): 1
-
-Nome: João Silva
-
-RG: 1234567
-
-Telefone: 32988887777
-
-Email: joao@example.com
-
-Digite o número do quarto para esta reserva: 101
-
-Data de check-in: 10/11/2025
-
-Data de check-out: 12/11/2025
+**Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)**
 ```
-
-
-- Saída:
-```text 
-Reserva cadastrada com sucesso!
-
-Número da reserva: 1
-
-Quarto: 101
 ```
-**Opção 2 (pesquisar hóspede pelo número de rserva)** 
-- Entrada:
-```text 
-Escolha: 2
-
-Digite o número da reserva do hóspede: 1
-- Saída (se o número existir): 
-Hóspede encontrado:
-
-Número da reserva: 1
-
-Nome: João Silva
-
-RG: 1234567
-
-Telefone: 32988887777
-
-Email: joao@example.com
-```
-- Saída (se o número não existir):
-```text 
-Escolha: 2
-
-Digite o número da reserva do hóspede: 99
-
-Hóspede não encontrado para este número de reserva.
-```
-**Opção 3 (pesquisar dados completos da reserva)**
-- Entrada:
-```text  
-Escolha: 3
-
-Digite o número da reserva: 1
-```
-- Saída (se a reserva existir):
-```text  
-Dados da Reserva
-
-Número da reserva: 1
-
-Status: [status da reserva]
-
-Check-in: 10/11/2025
-
-Check-out: 12/11/2025
-
-Hóspede:
-Número de reserva (ID do hóspede): 1
-
-Nome: João Silva
-
-RG: 1234567
-
-Telefone: 32988887777
-
-Email: joao@example.com
-
-Quarto:
-
-Número: 101
-
-Tipo: Casal
-
-Preço diária: R$ 250
-```
-- Saída (se a reserva não existir):
-  
-`Reserva não encontrada.`
-
-**Opção 5 (Listar status do quarto)**
-- Entrada:
-  
-`Escolha: 5`
-- Saída:
-```text 
-Status de Reservas (Lista de Quartos)
-Quarto 101 - Tipo: Casal - Preço: R$250 - Status: OCUPADO
-```
-OBS: um quarto sem reserva aparecerá como “DISPONÍVEL”
+**Opção 3 (Pesquisar numero de reserva)**
+**Opção 4 (Cadastrar nova reserva de hospede ja previamente cadastrado)**
+**Opção 5 (Status de reservas(Listas quartos))**
+**Opção 6 (Ocupar quarto)**
+**Opção 7 (Liberar quarto)**
+**Opção 0 (Sair)**
 
 
 ## 12. Programação Defensiva (Malu) 
