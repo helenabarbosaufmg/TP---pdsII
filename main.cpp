@@ -159,7 +159,7 @@ else if (opcao == 4) {
         } else {
             // Exibe os dados do hóspede
             cout << "\nDados do Hóspede:\n";
-            cout << "Codigo: "   << h->HCodigo()   << endl;
+            cout << "Numero da reserva: "   << h->HCodigo()   << endl;
             cout << "Nome: "     << h->HNome()     << endl;
             cout << "RG: "       << h->HRG()       << endl;
             cout << "Telefone: " << h->HTelefone() << endl;

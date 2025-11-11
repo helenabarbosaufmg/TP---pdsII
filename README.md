@@ -90,24 +90,150 @@ O sistema de gerenciamento de hotel tem como funções:
 ## 11. Exemplos de Uso (Entradas e Saídas)
 
 **Opção 1 (cadastrar novo quarto)**
+Entrada:
 ```
-Entrada: 1
+1
 ```
-
+Saída: 
 ```
-Saida: 
 Cadastro de Quarto
 Numero do quarto: 01
 Tipo (ex: Solteiro, Casal, Luxo): Casal
 Preco da diaria: 120
+Quarto cadastrado com sucesso!
 ```
 **Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)**
+Entrada: 
 ```
+2
 ```
+Saída: 
+```
+Quartos cadastrados:
+Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: DISPONIVEL
+
+Digite o numero do quarto para este hospede:
+```
+Entrada:
+```
+1
+```
+Saída:
+```
+ Dados do Hospede
+Codigo do hospede: 01
+Nome: Joao Silva
+RG: 12345678990
+Telefone: 31912345678
+Email: joaosilva@gmail.com
+Hospede cadastrado com sucesso.
+```
+Saída:
+```
+Data de check-in: 12/11/2025
+Data de check-out: 15/11/2025
+Reserva criada com sucesso!
+```
+
 **Opção 3 (Pesquisar numero de reserva)**
+Entrada:
+```
+3
+```
+Saída:
+```
+Digite o numero da reserva: 01
+```
+Saída:
+```
+Dados da Reserva
+Numero da reserva: 1
+Status: Agendada
+Check-in: 12/11/2025
+Check-out: 15/11/2025
+
+Hospede:
+Nome: Joao Silva
+RG: 12345678990
+Telefone: 31912345678
+Email: joaosilva@gmail.com
+
+Quarto:
+Numero: 1
+Tipo: Solteiro
+Preco diaria: R$ 120
+```
+
 **Opção 4 (Cadastrar nova reserva de hospede ja previamente cadastrado)**
+Entrada:
+```
+4
+```
+Saída:
+```
+Codigo do hospede (ja cadastrado):
+```
+Entrada: 
+```
+1
+```
+Saída:
+```
+Dados do H├│spede:
+Codigo: 1
+Nome: Joao Silva
+RG: 12345678990
+Telefone: 31912345678
+Email: joaosilva@gmail.com
+
+Quartos cadastrados:
+Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: OCUPADO
+
+Digite o numero do quarto para nova reserva (ou 0 para cadastrar um novo quarto):
+```
+Entrada:
+``` 
+0
+```
+Saída:
+```
+Cadastro de Novo Quarto
+Numero do quarto: 02
+Tipo (ex: Solteiro, Casal, Luxo): Casal
+Preco da diaria: 350
+Quarto cadastrado com sucesso!
+Data de check-in: 12/11/2025
+Data de check-out: 15/11/2025
+Reserva criada com sucesso!
+```
+
 **Opção 5 (Status de reservas(Listas quartos))**
+Entrada:
+```
+5
+```
+Saída:
+```
+Status de Reservas (Lista de Quartos)
+Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: OCUPADO
+``` 
 **Opção 6 (Ocupar quarto)**
+Entrada:
+```
+6
+```
+Saída:
+```
+Numero do quarto a ocupar: 
+```
+Entrada:
+```
+1
+```
+Saída: 
+```
+Quarto 1 ja esta OCUPADO.
+```
 **Opção 7 (Liberar quarto)**
 **Opção 0 (Sair)**
 
