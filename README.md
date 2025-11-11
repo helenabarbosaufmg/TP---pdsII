@@ -143,7 +143,7 @@ Entrada:
 Saída:
 ```
 Dados do Hóspede
-Código do hóspede: 01
+Número de reserva: 1
 Nome: Joao Silva
 RG: 12345678990
 Telefone: 31912345678
@@ -193,7 +193,7 @@ Entrada:
 ```
 Saída:
 ```
-Código do hóspede (já cadastrado):
+Número de reserva do hospede (já cadastrado):
 ```
 Entrada: 
 ```
@@ -238,6 +238,7 @@ Saída:
 ```
 Status de Reservas (Lista de Quartos)
 Quarto 1 - Tipo: Solteiro - Preço: R$ 120 - Status: OCUPADO
+Quarto 2 - Tipo: Casal - Preço R$ 350 - Status: OCUPADO
 ``` 
 ### **Opção 6 (Ocupar quarto)**
 Entrada:
