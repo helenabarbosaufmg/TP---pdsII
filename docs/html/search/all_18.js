@@ -1,20 +1,12 @@
 var searchData=
 [
-  ['rcheckin_0',['RCheckIn',['../class_reserva.html#a3df24f4285d07d5d287a02abeaae4d30',1,'Reserva']]],
-  ['rcheckout_1',['RCheckOut',['../class_reserva.html#acb9430861a703b226bc0c2552278ed97',1,'Reserva']]],
-  ['readme_2emd_2',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['requisitos_3',['Requisitos',['../md_topico_e5_2topico_e5_2requisitos.html',1,'']]],
-  ['requisitos_4',['requisitos',['../md_topico_e5_2requisitos.html',1,'']]],
-  ['requisitos_2emd_5',['requisitos.md',['../requisitos_8md.html',1,'(Global Namespace)'],['../topico_e5_2requisitos_8md.html',1,'(Global Namespace)']]],
-  ['reserva_6',['Reserva',['../class_reserva.html',1,'Reserva'],['../class_reserva.html#ac24534448a6432cc6dbac09dbfb1125f',1,'Reserva::Reserva()']]],
-  ['reserva_2ecpp_7',['Reserva.cpp',['../_reserva_8cpp.html',1,'']]],
-  ['reserva_2eh_8',['Reserva.h',['../_reserva_8h.html',1,'']]],
-  ['reservas_9',['reservas',['../class_sistema.html#a6af2c8e5500b3ab592687b54339f78e0',1,'Sistema']]],
-  ['reservasobreposta_10',['reservaSobreposta',['../class_sistema.html#ad8230e486098d6e1bfb2e5ff1dc9755a',1,'Sistema']]],
-  ['resolvido_11',['2. Problema a Ser Resolvido',['../index.html#autotoc_md2',1,'']]],
-  ['rg_12',['rg',['../class_hospede.html#abbf620d3334c6b7510758d1c9b18bd7d',1,'Hospede']]],
-  ['rhospede_13',['RHospede',['../class_reserva.html#a4795c2154ab9a851d080e71bb65c0452',1,'Reserva']]],
-  ['rnumeroreserva_14',['RNumeroReserva',['../class_reserva.html#a0d57da37ede5e631558101df90748814',1,'Reserva']]],
-  ['rquarto_15',['RQuarto',['../class_reserva.html#a459fe5e23ee1be0486086a4502e3fc87',1,'Reserva']]],
-  ['rstatus_16',['RStatus',['../class_reserva.html#a765cc7aacdbd0e2a62ff1ef08255e024',1,'Reserva']]]
+  ['pdsii_0',['TP&amp;mdash;pdsII',['../index.html',1,'']]],
+  ['pesquisar_20número_20de_20reserva_1',['&lt;b&gt;Opção 3 (Pesquisar número de reserva)&lt;/b&gt;',['../index.html#autotoc_md14',1,'']]],
+  ['posicaohospede_2',['posicaoHospede',['../class_sistema.html#ab6de9c39bc03bfbaebe5a5cb90e62434',1,'Sistema']]],
+  ['posicaoquarto_3',['posicaoQuarto',['../class_sistema.html#a1e95f2a5b2be75a479a71efe63b71043',1,'Sistema']]],
+  ['preco_4',['preco',['../class_quartos.html#a4308a16d4a9d45e93a94c7cdb7fb69fd',1,'Quartos']]],
+  ['previamente_20cadastrado_5',['previamente cadastrado',['../index.html#autotoc_md13',1,'&lt;b&gt;Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)&lt;/b&gt;'],['../index.html#autotoc_md15',1,'&lt;b&gt;Opção 4 (Cadastrar nova reserva de hóspede já previamente cadastrado)&lt;/b&gt;']]],
+  ['problema_20a_20ser_20resolvido_6',['2. Problema a Ser Resolvido',['../index.html#autotoc_md2',1,'']]],
+  ['programação_20defensiva_7',['12. Programação Defensiva',['../index.html#autotoc_md20',1,'']]],
+  ['projeto_8',['Projeto',['../index.html#autotoc_md1',1,'1. Tema do Projeto'],['../index.html#autotoc_md3',1,'3. Objetivos do Projeto'],['../index.html#autotoc_md7',1,'7. Organização do Projeto']]]
 ];

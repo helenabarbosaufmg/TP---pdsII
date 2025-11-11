@@ -182,31 +182,260 @@ $(function(){initNavTree('index.html','',''); });
 <li>Verificação da disponibilidade do quarto;</li>
 <li>Cancelamento de reserva;</li>
 <li>Listagem do status do quarto;</li>
-<li>(...)</li>
+<li>Cadastro de hóspede salvo para novas reservas.</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 9. Itens Fora do Escopo</h1>
-<p>(...)</p>
+<ul>
+<li>Cadastro de hóspede salvo para novas reservas.</li>
+</ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 10. Instruções de Uso</h1>
+<ul>
+<li><b>Para Linux:</b> Compilar com MakeFile:</li>
+</ul>
+<p><span class="tt">make run</span></p>
+<p><span class="tt">make</span></p>
+<ul>
+<li><b>Para MacOS:</b> Compilar no terminal com g++: <div class="fragment"><div class="line">g++ main.cpp src/Hospede.cpp src/Quartos.cpp src/Reserva.cpp src/Sistema.cpp -I include -std=c++17 -o main</div>
+</div><!-- fragment --> <span class="tt">./main</span></li>
+<li><b>Para Windows:</b> Compilar com MakeFile:</li>
+</ul>
+<p><span class="tt">make run</span></p>
+<p><span class="tt">make</span></p>
+<p>OBS: make clean não funciona no Windows.</p>
+<p>Observações de uso:</p><ul>
+<li>Para cadastrar uma reserva, é necessário que já haja um quarto registrado;</li>
+<li>Quando colocar o tipo do quarto, usar a primeira letra maiúscula;</li>
+<li>Colocar datas de check-in e check-out no modelo: dd/mm/aaaa;</li>
+<li>Telefone e RG só aceitam números (sem caracteres especiais).</li>
+</ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 11. Exemplos de Uso (Entradas e Saídas)</h1>
-<p><b>Opção 1 (cadastrar novo quarto)</b> </p><div class="fragment"><div class="line">Entrada: 1</div>
-</div><!-- fragment --><div class="fragment"><div class="line">Saida: </div>
-<div class="line">Cadastro de Quarto</div>
-<div class="line">Numero do quarto: 01</div>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<b>Opção 1 (cadastrar novo quarto)</b></h2>
+<p>Entrada: </p><div class="fragment"><div class="line">1</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Cadastro de Quarto</div>
+<div class="line">Número do quarto: 01</div>
 <div class="line">Tipo (ex: Solteiro, Casal, Luxo): Casal</div>
-<div class="line">Preco da diaria: 120</div>
-</div><!-- fragment --><p> <b>Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)</b> </p><div class="fragment"></div><!-- fragment --><p> <b>Opção 3 (Pesquisar numero de reserva)</b> <b>Opção 4 (Cadastrar nova reserva de hospede ja previamente cadastrado)</b> <b>Opção 5 (Status de reservas(Listas quartos))</b> <b>Opção 6 (Ocupar quarto)</b> <b>Opção 7 (Liberar quarto)</b> <b>Opção 0 (Sair)</b></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
-12. Programação Defensiva (Malu)</h1>
-<p>(...)</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<div class="line">Preço da diaria: 120</div>
+<div class="line">Quarto cadastrado com sucesso!</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<b>Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)</b></h2>
+<p>Entrada: </p><div class="fragment"><div class="line">2</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Quartos cadastrados:</div>
+<div class="line">Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: DISPONIVEL</div>
+<div class="line"> </div>
+<div class="line">Digite o número do quarto para este hóspede:</div>
+</div><!-- fragment --><p> Entrada: </p><div class="fragment"><div class="line">1</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Dados do Hóspede</div>
+<div class="line">Número de reserva: 1</div>
+<div class="line">Nome: Joao Silva</div>
+<div class="line">RG: 12345678990</div>
+<div class="line">Telefone: 31912345678</div>
+<div class="line">Email: joaosilva@gmail.com</div>
+<div class="line">Hóspede cadastrado com sucesso.</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Data de check-in: 12/11/2025</div>
+<div class="line">Data de check-out: 15/11/2025</div>
+<div class="line">Reserva criada com sucesso!</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<b>Opção 3 (Pesquisar número de reserva)</b></h2>
+<p>Entrada: </p><div class="fragment"><div class="line">3</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Digite o número da reserva: 01</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Dados da Reserva</div>
+<div class="line">Número da reserva: 1</div>
+<div class="line">Status: Agendada</div>
+<div class="line">Check-in: 12/11/2025</div>
+<div class="line">Check-out: 15/11/2025</div>
+<div class="line"> </div>
+<div class="line">Hóspede:</div>
+<div class="line">Nome: Joao Silva</div>
+<div class="line">RG: 12345678990</div>
+<div class="line">Telefone: 31912345678</div>
+<div class="line">Email: joaosilva@gmail.com</div>
+<div class="line"> </div>
+<div class="line">Quarto:</div>
+<div class="line">Número: 1</div>
+<div class="line">Tipo: Solteiro</div>
+<div class="line">Preço diária: R$ 120</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<b>Opção 4 (Cadastrar nova reserva de hóspede já previamente cadastrado)</b></h2>
+<p>Entrada: </p><div class="fragment"><div class="line">4</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Número de reserva do hospede (já cadastrado):</div>
+</div><!-- fragment --><p> Entrada: </p><div class="fragment"><div class="line">1</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Dados do Hóspede:</div>
+<div class="line">Codigo: 1</div>
+<div class="line">Nome: Joao Silva</div>
+<div class="line">RG: 12345678990</div>
+<div class="line">Telefone: 31912345678</div>
+<div class="line">Email: joaosilva@gmail.com</div>
+<div class="line"> </div>
+<div class="line">Quartos cadastrados:</div>
+<div class="line">Quarto 1 - Tipo: Solteiro - Preço: R$ 120 - Status: OCUPADO</div>
+<div class="line"> </div>
+<div class="line">Digite o número do quarto para nova reserva (ou 0 para cadastrar um novo quarto):</div>
+</div><!-- fragment --><p> Entrada: </p><div class="fragment"><div class="line">0</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Cadastro de Novo Quarto</div>
+<div class="line">Número do quarto: 02</div>
+<div class="line">Tipo (ex: Solteiro, Casal, Luxo): Casal</div>
+<div class="line">Preço da diária: 350</div>
+<div class="line">Quarto cadastrado com sucesso!</div>
+<div class="line">Data de check-in: 12/11/2025</div>
+<div class="line">Data de check-out: 15/11/2025</div>
+<div class="line">Reserva criada com sucesso!</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<b>Opção 5 (Status de reservas(Listas quartos))</b></h2>
+<p>Entrada: </p><div class="fragment"><div class="line">5</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Status de Reservas (Lista de Quartos)</div>
+<div class="line">Quarto 1 - Tipo: Solteiro - Preço: R$ 120 - Status: OCUPADO</div>
+<div class="line">Quarto 2 - Tipo: Casal - Preço R$ 350 - Status: OCUPADO</div>
+</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<b>Opção 6 (Ocupar quarto)</b></h2>
+<p>Entrada: </p><div class="fragment"><div class="line">6</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Número do quarto a ocupar: </div>
+</div><!-- fragment --><p> Entrada: </p><div class="fragment"><div class="line">1</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Quarto 1 já esta OCUPADO.</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+<b>Opção 7 (Liberar quarto)</b></h2>
+<p>Entrada: </p><div class="fragment"><div class="line">7</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Número do quarto a liberar:</div>
+</div><!-- fragment --><p> Entrada: </p><div class="fragment"><div class="line">1</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Quarto 1 agora esta DISPONIVEL.</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+<b>Opção 0 (Sair)</b></h2>
+<p>Entrada: </p><div class="fragment"><div class="line">0</div>
+</div><!-- fragment --><p> Saída: </p><div class="fragment"><div class="line">Saindo do sistema...</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+12. Programação Defensiva</h1>
+<ul>
+<li><b>Em <a class="el" href="_quartos_8cpp.html">Quartos.cpp</a>:</b> <div class="fragment"><div class="line">#include &lt;iostream&gt;</div>
+<div class="line">#include &lt;stdexcept&gt;</div>
+<div class="line">#include &quot;Quartos.h&quot;</div>
+<div class="line">Quartos::Quartos(int numero, std::string tipo, double preco)</div>
+<div class="line">: numero(numero), tipo(tipo), preco(preco), ocupado(false) {</div>
+<div class="line">if (numero &lt;= 0) throw std::invalid_argument(&quot;Erro: número do quarto de</div>
+<div class="line">ve ser positivo.&quot;);</div>
+<div class="line">if (tipo != &quot;Solteiro&quot; &amp;&amp; tipo != &quot;Casal&quot; &amp;&amp; tipo != &quot;Luxo&quot;)</div>
+<div class="line">throw std::invalid_argument(&quot;Erro: tipo inválido. Use Solteiro, Casal ou</div>
+<div class="line">Luxo.&quot;);</div>
+<div class="line">if (preco &lt;= 0)</div>
+<div class="line">throw std::invalid_argument(&quot;Erro: preço deve ser maior que zero.&quot;);</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+<li><b>Em <a class="el" href="_hospede_8cpp.html">Hospede.cpp</a>:</b> <div class="fragment"><div class="line">#include &quot;Hospede.h&quot;</div>
+<div class="line">#include &lt;iostream&gt;</div>
+<div class="line">#include &lt;stdexcept&gt;</div>
+<div class="line">#include &lt;algorithm&gt;</div>
+<div class="line">#include &lt;cctype&gt;</div>
+<div class="line">using namespace std;</div>
+<div class="line">static bool somenteNumeros(const string&amp; str) {</div>
+<div class="line">return !str.empty() &amp;&amp; all_of(str.begin(), str.end(), ::isdigit);</div>
+<div class="line">}</div>
+<div class="line">Hospede::Hospede() {</div>
+<div class="line">codigo = 0;</div>
+<div class="line">nome = &quot;&quot;;</div>
+<div class="line">rg = &quot;&quot;;</div>
+<div class="line">telefone = &quot;&quot;;</div>
+<div class="line">email = &quot;&quot;;</div>
+<div class="line">}</div>
+<div class="line">Hospede::Hospede(int codigo, const string&amp; nome, const string&amp; rg, const</div>
+<div class="line">string&amp; telefone, const string&amp; email) {</div>
+<div class="line">if (nome.empty()) throw invalid_argument(&quot;Erro: nome não pode ser vazi</div>
+<div class="line">o.&quot;);</div>
+<div class="line">if (!somenteNumeros(rg)) throw invalid_argument(&quot;Erro: RG deve conter</div>
+<div class="line">apenas números.&quot;);</div>
+<div class="line">if (!somenteNumeros(telefone)) throw invalid_argument(&quot;Erro: telefone d</div>
+<div class="line">eve conter apenas números.&quot;);</div>
+<div class="line">if (email.find(&#39;@&#39;) == string::npos) throw invalid_argument(&quot;Erro: e-mail i</div>
+<div class="line">nválido.&quot;);</div>
+<div class="line">this→codigo = codigo;</div>
+<div class="line">this→nome = nome;</div>
+<div class="line">this→rg = rg;</div>
+<div class="line">this→telefone = telefone;</div>
+<div class="line">this→email = email;</div>
+<div class="line">}</div>
+<div class="line">void Hospede::H_RG(const string&amp; rg) {</div>
+<div class="line">if (!somenteNumeros(rg)) throw invalid_argument(&quot;Erro: RG inválido — us</div>
+<div class="line">e apenas números.&quot;);</div>
+<div class="line">this→rg = rg;</div>
+<div class="line">}</div>
+<div class="line">void Hospede::H_Telefone(const string&amp; telefone) {</div>
+<div class="line">if (!somenteNumeros(telefone)) throw invalid_argument(&quot;Erro: telefone in</div>
+<div class="line">válido — use apenas números.&quot;);</div>
+<div class="line">this→telefone = telefone;</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+<li><b>Em <a class="el" href="_reserva_8cpp.html">Reserva.cpp</a>:</b> <div class="fragment"><div class="line">#include &quot;Reserva.h&quot;</div>
+<div class="line">#include &lt;stdexcept&gt;</div>
+<div class="line">#include &lt;cctype&gt;</div>
+<div class="line">static bool dataValida(const std::string&amp; data) {</div>
+<div class="line">if (data.size() != 10 || data[2] != &#39;/&#39; || data[5] != &#39;/&#39;) return false;</div>
+<div class="line">for (size_t i = 0; i &lt; data.size(); ++i) {</div>
+<div class="line">if (i != 2 &amp;&amp; i != 5 &amp;&amp; !isdigit(data[i])) return false;</div>
+<div class="line">}</div>
+<div class="line">return true;</div>
+<div class="line">}</div>
+<div class="line">Reserva::Reserva(int numeroReserva, Hospede h, Quartos q, std::string ch</div>
+<div class="line">eckIn, std::string checkOut)</div>
+<div class="line">: numeroReserva(numeroReserva), hospede(h), quarto(q), checkIn(chec</div>
+<div class="line">kIn), checkOut(checkOut), status(&quot;ATIVA&quot;) {</div>
+<div class="line">if (numeroReserva &lt;= 0) throw std::invalid_argument(&quot;Erro: número da re</div>
+<div class="line">serva deve ser positivo.&quot;);</div>
+<div class="line">if (!dataValida(checkIn) || !dataValida(checkOut))</div>
+<div class="line">throw std::invalid_argument(&quot;Erro: formato de data inválido (use dd/m</div>
+<div class="line">m/aaaa).&quot;);</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+<li><b>Em <a class="el" href="_sistema_8cpp.html">Sistema.cpp</a>:</b> <div class="fragment"><div class="line">#include &lt;iostream&gt;</div>
+<div class="line">#include &lt;stdexcept&gt;</div>
+<div class="line">#include &quot;Sistema.h&quot;</div>
+<div class="line">#include &quot;Reserva.h&quot;</div>
+<div class="line">using namespace std;</div>
+<div class="line">Sistema::Sistema(){}</div>
+<div class="line">bool Sistema::quartoCadastrado(int numero) const {</div>
+<div class="line">for (const Quartos&amp; q : quartos) {</div>
+<div class="line">if (q.QNumero() == numero) return true;</div>
+<div class="line">}</div>
+<div class="line">return false;</div>
+<div class="line">}</div>
+<div class="line">void Sistema::cadastrarQuarto(const Quartos&amp; q) {</div>
+<div class="line">if (quartoCadastrado(q.QNumero())) {</div>
+<div class="line">throw invalid_argument(&quot;Erro: já existe quarto com este número.&quot;);</div>
+<div class="line">}</div>
+<div class="line">quartos.push_back(q);</div>
+<div class="line">cout &lt;&lt; &quot;Quarto cadastrado com sucesso!&quot; &lt;&lt; endl;</div>
+<div class="line">}</div>
+<div class="line">void Sistema::cadastrarHospede(const Hospede&amp; h) {</div>
+<div class="line">if (hospedeCadastrado(h.HCodigo())) {</div>
+<div class="line">throw invalid_argument(&quot;Erro: já existe hóspede com este código.&quot;);</div>
+<div class="line">}</div>
+<div class="line">hospedes.push_back(h);</div>
+<div class="line">cout &lt;&lt; &quot;Hóspede cadastrado com sucesso!&quot; &lt;&lt; endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+<li><b>Em <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a>:</b> <div class="fragment"><div class="line">#include &lt;iostream&gt;</div>
+<div class="line">#include &quot;Sistema.h&quot;</div>
+<div class="line">int main() {</div>
+<div class="line">Sistema sistema;</div>
+<div class="line">try {</div>
+<div class="line">Quartos q1(101, &quot;Casal&quot;, 250.0);</div>
+<div class="line">sistema.cadastrarQuarto(q1);</div>
+<div class="line">Hospede h1(1, &quot;Maria&quot;, &quot;123456&quot;, &quot;987654321&quot;, &quot;maria@email.com&quot;);</div>
+<div class="line">sistema.cadastrarHospede(h1);</div>
+<div class="line">}</div>
+<div class="line">catch (const std::exception&amp; e) {</div>
+<div class="line">std::cerr &lt;&lt; &quot;Erro: &quot; &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 13. Documentação: Doxygen (Helena)</h1>
 <p>(...) </p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 14. Link do Vídeo de Execução</h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 15. Equipe e Contribuições</h1>
 <ul>
 <li>Helena Barbosa: responsável pelo desenvolvimento dos arquivos <a class="el" href="_reserva_8h.html">Reserva.h</a> e <a class="el" href="_sistema_8h.html">Sistema.h</a>, desenvolvimento do arquivo <a class="el" href="_sistema_8cpp.html">Sistema.cpp</a> e modificações no <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a> relacionadas a funções correspondentes ao sistema do hotel, desenvolvimento da documentação por meio do Doxygen.</li>
@@ -215,7 +444,7 @@ $(function(){initNavTree('index.html','',''); });
 <li>Maria Luísa Braga: responsável pelo desenvolvimento dos arquivos <a class="el" href="_hospede_8h.html">Hospede.h</a> e <a class="el" href="_quartos_8h.html">Quartos.h</a>, desenvolvimento do arquivo <a class="el" href="_quartos_8cpp.html">Quartos.cpp</a> e modificações no <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a> relacionadas a funções correspondentes aos quartos do hotel, inclusão da programação defensiva no código.</li>
 </ul>
 <p>Observação: todos os integrantes participaram da discussão na escolha do tema, no desenvolvimento inicial do ambiente de programação e em modificações e revisões dos códigos e arquivos para a entrega da saída correta e esperada pelo grupo.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 16. Ciclo de Desenvolvimento</h1>
 <ul>
 <li>Sprint 1 (05/10 a 09/10): formação da equipe, configuração do GitHub e outros ambientes de desenvolvimento, definição do tema com breve descrição, acesso ao GitHub com um commit teste de cada membro do grupo.</li>
@@ -223,21 +452,93 @@ $(function(){initNavTree('index.html','',''); });
 <li>Sprint 3 (23/10 a 11/10): codificação dos arquivos .cpp (<a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a>; <a class="el" href="_hospede_8cpp.html">Hospede.cpp</a>; <a class="el" href="_quartos_8cpp.html">Quartos.cpp</a>; <a class="el" href="_reserva_8cpp.html">Reserva.cpp</a>; <a class="el" href="_sistema_8cpp.html">Sistema.cpp</a>), desenvolvimento do <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> e da documentação por meio do Doxygen, inclusão de mecanismos para tratar condições de exceção do sistema, revisão do trabalho e desenvolvimento do vídeo de execução.</li>
 <li>Sprint 4 (12/11 a 25/11): entrega da apresentação em PDF até dia 12/11 e apresentação em ordem de sorteio dos grupos nos dias 12, 18 e 25 de novembro.</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 17. Aprendizados:</h1>
 <ul>
 <li>Algumas funcionalidades que gostaríamos de ter adicionado ao sistema não foram possíveis, devido a impedimentos como o tempo e a dificuldade de realizá-las, por exemplo uma interface gráfica para o sistema de gerenciamento de hotéis.</li>
 <li>Dificuldade inicial com o ambiente de desenvolvimento GitHub, devido aos diversos comandos necessários para commitar updates e pelo fato de que foi necessário grande comunicação entre os membros do grupo para que mudanças por pessoas diferentes não fossem feitas ao mesmo tempo, pois nem sempre eram salvos se feitas no mesmo momento.</li>
 <li>Retrabalho no desenvolvimento do <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a> ao perceber que, apesar de estar compilando corretamente, não estava entregando a saída esperada. Assim foram necessárias pequenas mudanças em todo código do main.</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 18. Evidências no Github:</h1>
 <ul>
-<li><b>Commits:</b> registro de todas as alterações com autoria individual.</li>
-<li><b>Issues:</b> utilizadas para distribuir tarefas e acompanhar progresso.</li>
-<li><b>Milestones:</b> criadas para organizar entregas por sprint.</li>
-<li><b>Pull Requests:</b> revisões e integração de código entre membros.</li>
-<li><b>Release final:</b> tag <span class="tt">v1.0.0</span> com código testado, documentação e vídeo de execução. </li>
+<li><b>Commits:</b><ul>
+<li>99de164 Lilla Xavier &lt;2025018341&gt; Tue Nov 11 10:01:48 2025 -0300 mudanca em acentuacao</li>
+</ul>
+</li>
+<li>7a60c27 Lilla Xavier &lt;2025018341&gt; Tue Nov 11 09:52:31 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> |\ <br  />
+ | * 4fbd889 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Nov 11 09:10:24 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> | |\ <br  />
+ | | * cf251c6 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Tue Nov 11 09:06:09 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | * | 75da6ee liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Nov 11 09:10:14 2025 -0300 correçaõ codigo e numero de reserva | |/ <br  />
+ | * 9f45937 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Nov 11 08:34:26 2025 -0300 main | * 2f2c894 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Nov 11 08:30:13 2025 -0300 read me atualizado | * 1291be2 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Nov 11 08:22:59 2025 -0300 read me teste | * 3c76de9 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Nov 11 08:13:43 2025 -0300 codigo -&gt; numero de reserva e read me atalizando | * a6a3165 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 23:25:42 2025 -0300 doxygen | * 7561d58 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 22:59:54 2025 -0300 comentarios doxygen | * 9af6110 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 21:58:50 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> | |\ <br  />
+ | | * 318f13c liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 21:54:01 2025 -0300 main atualizado | * | b1080dd Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 21:53:10 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> | || | | * f53c960 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 21:49:52 2025 -0300 rascunho | | * 89aedbe liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 21:46:27 2025 -0300 read me teste3 | | * bb645a5 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 21:45:29 2025 -0300 read me teste 2 | | * 2a3b065 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 21:44:33 2025 -0300 readme teste | | * 335e7bf liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 21:43:23 2025 -0300 readme | * | 57e72e4 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 21:53:01 2025 -0300 <a class="el" href="_sistema_8cpp.html">sistema.cpp</a> correcao tipo de quarto | |/ <br  />
+ | * 225adc5 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 21:17:01 2025 -0300 Local do main atualizado | * 4665e9c liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 20:57:15 2025 -0300 Correção de bugs e erros | * 378e8a1 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Mon Nov 10 20:24:11 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> | |\ <br  />
+ | | * edc7839 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 19:35:42 2025 -0300 Atualizações programação defensiva | | * fe680ec marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 19:23:26 2025 -0300 Remove submódulo antigo e corrige estrutura do projeto | | * 55e7e3a marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 18:57:41 2025 -0300 Corrigindo estrutura e removendo submódulo duplicado | | * 0fe0488 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 18:39:01 2025 -0300 Atualizações programação defensiva | * | e62a786 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 18:46:52 2025 -0300 Un-nest project: mover conteúdo de TP&mdash;pdsII para root e remover submódulo | |/ <br  />
+ | * ddff9fe marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 21:13:16 2025 -0300 Adicionando o arquivo teste.txt | * 2edaa9e marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 17:17:11 2025 -0300 atualiza <a class="el" href="_hospede_8cpp.html">Hospede.cpp</a>, <a class="el" href="_quartos_8cpp.html">Quartos.cpp</a> e <a class="el" href="_reserva_8cpp.html">Reserva.cpp</a> com a programação defensiva | * 2d34990 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 12:29:16 2025 -0300 atualiza main com integracao do sistema | * 335a750 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Mon Nov 10 11:32:51 2025 -0300 Update <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a> | * d1ba0be Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 10:21:05 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> | |\ <br  />
+ | * | 771c519 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 02:01:10 2025 -0300 modificacoes <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a> | * | de49e66 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 01:39:25 2025 -0300 compila sistema completa com correcoes reserva sistema | * | e01373d Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 01:04:03 2025 -0300 atualiza arquivos | |\ \ <br  />
+ | * | | d7c3908 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Mon Nov 10 00:49:35 2025 -0300 Implementa sistema e ajustes reserva | * | | 75d79c2 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Sun Nov 9 19:03:01 2025 -0300 funcao setStatus em <a class="el" href="_reserva_8cpp.html">reserva.cpp</a></li>
+<li>| | | 9130c4e Lilla Xavier &lt;2025018341&gt; Tue Nov 11 09:12:48 2025 -0300 atualizacoes | |_|/ <br  />
+ |/| | <br  />
+</li>
+<li>| | 73cd2a6 Lilla Xavier &lt;2025018341&gt; Mon Nov 10 10:12:59 2025 -0300 <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a> atualizado</li>
+<li>| | 7569754 Lilla Xavier &lt;2025018341&gt; Mon Nov 10 10:02:03 2025 -0300 Bug de commit |\ \ \ <br  />
+ | | |/ <br  />
+ | |/| <br  />
+ | * | 9814abb helenabarbosaufmg <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Sun Nov 9 18:48:50 2025 -0300 Merge pull request #1 from helenabarbosaufmg/feature/sistema-cpp | |\ \ <br  />
+ | | * \ 51c05cf helenabarbosaufmg <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Sun Nov 9 18:05:02 2025 -0300 Merge branch 'main' into feature/sistema-cpp | | |\ \ <br  />
+ | | |/ / <br  />
+ | |/| / <br  />
+ | | |/ <br  />
+ | * | b304abd Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 12:57:12 2025 -0300 Update <a class="el" href="_reserva_8h.html">Reserva.h</a> | * | f70d0e8 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 12:56:31 2025 -0300 Update <a class="el" href="_reserva_8cpp.html">Reserva.cpp</a> | * | 5c8ca29 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 12:41:00 2025 -0300 Update <a class="el" href="_reserva_8cpp.html">Reserva.cpp</a> | * | 9cb5a37 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 12:40:01 2025 -0300 Update <a class="el" href="_reserva_8h.html">Reserva.h</a> | * | 39c9260 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Sun Nov 9 12:24:11 2025 -0300 Correção opções | * | ca02c49 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Sun Nov 9 12:02:22 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> | |\ \ <br  />
+ | | * | cb984d0 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 11:38:04 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | | * | 5e5b424 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 11:29:22 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | | * | 00e2e6b Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 11:28:24 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | | * | 80e2f10 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 11:25:57 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | | * | b14fd2a Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 11:20:34 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | | * | ca15e53 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sun Nov 9 11:17:27 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | | * | 1ce8c4b Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sat Nov 8 17:33:07 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | * | | d80e831 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Sun Nov 9 12:02:15 2025 -0300 Makefile criado | |/ / <br  />
+ | * | 36af5b0 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Sat Nov 8 16:40:48 2025 -0300 <a class="el" href="_quartos_8h.html">quartos.h</a> | * | 14293cc Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sat Nov 8 16:12:40 2025 -0300 Update <a class="el" href="_quartos_8h.html">Quartos.h</a> | * | dd6b396 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Sat Nov 8 16:11:24 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> | * | 575ce2c liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Fri Nov 7 11:39:20 2025 -0300 main | * | 978e270 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Fri Nov 7 10:58:41 2025 -0300 Update <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a> | * | 63ca3be Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Fri Nov 7 10:44:37 2025 -0300 Update reserva <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a> | | * a55b021 Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Sat Nov 8 19:44:34 2025 -0300 Implementação das funções e ajustes | | * 281890c Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Nov 5 22:01:39 2025 -0300 Update <a class="el" href="_sistema_8h.html">Sistema.h</a> | | * a42c26c Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Nov 5 21:57:48 2025 -0300 Correções no <a class="el" href="_sistema_8h.html">sistema.h</a></li>
+<li>| | 758f320 Lilla Xavier &lt;2025018341&gt; Mon Nov 10 09:51:16 2025 -0300 Atualizacoes |/ / <br  />
+</li>
+<li>| 04a6f96 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Nov 6 13:24:40 2025 -0300 mudança de pasta</li>
+<li>| 27c97c6 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Nov 6 13:18:05 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> |\ \ <br  />
+ | * \ 9dc02a8 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Nov 6 12:59:04 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> | |\ \ <br  />
+ | * | | ed750dc marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Nov 6 12:58:29 2025 -0300 atualizei o main</li>
+<li>| | | a53813c liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Nov 6 13:17:19 2025 -0300 teste | |/ / <br  />
+ |/| | <br  />
+</li>
+<li>| | f1dab41 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Nov 6 11:26:40 2025 -0300 bug corrigido</li>
+<li>| | 0454d2e Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Wed Nov 5 23:34:14 2025 -0300 Update <a class="el" href="_reserva_8h.html">Reserva.h</a></li>
+<li>| | 9f0f506 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Wed Nov 5 23:31:10 2025 -0300 Update <a class="el" href="_reserva_8h.html">Reserva.h</a></li>
+<li>| | d3456c9 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Wed Nov 5 23:27:31 2025 -0300 Update <a class="el" href="_reserva_8cpp.html">Reserva.cpp</a></li>
+<li>| | f8e0596 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Nov 5 20:27:32 2025 -0300 Update <a class="el" href="_hospede_8h.html">Hospede.h</a> |/ / <br  />
+</li>
+<li>| f90a999 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Nov 5 19:52:07 2025 -0300 Update <a class="el" href="_hospede_8h.html">Hospede.h</a></li>
+<li>| 8e64897 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Nov 5 19:04:58 2025 -0300 Update <a class="el" href="_quartos_8h.html">Quartos.h</a></li>
+<li>| 1acbf35 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Wed Nov 5 18:18:46 2025 -0300 Update <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> |/ <br  />
+</li>
+<li>cee0c6c liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Wed Nov 5 16:54:26 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> |\ <br  />
+ | * c963b1e liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Wed Nov 5 16:46:48 2025 -0300 Update <a class="el" href="_hospede_8h.html">Hospede.h</a></li>
+<li>| 05dcf5c liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Wed Nov 5 16:51:38 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> || | * 7dfac7a helenabarbosaufmg <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Oct 22 22:19:52 2025 -0300 Update <a class="el" href="_sistema_8h.html">Sistema.h</a> | * 53fcc6e helenabarbosaufmg <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Oct 22 22:19:19 2025 -0300 Update <a class="el" href="_sistema_8h.html">Sistema.h</a> | * b4d7fed helenabarbosaufmg <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Oct 22 22:14:54 2025 -0300 <a class="el" href="_reserva_8h.html">Reserva.h</a> | * fa7547a marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Oct 22 19:09:01 2025 -0300 Update <a class="el" href="_quartos_8h.html">Quartos.h</a> | * 814d090 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Wed Oct 22 19:07:35 2025 -0300 Update <a class="el" href="_hospede_8h.html">Hospede.h</a> | * 2e4bfc9 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Tue Oct 21 23:46:49 2025 -0300 Update requisitos.md | * f419ebd Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Tue Oct 21 23:27:51 2025 -0300 Update cartoes.md | * e179b7f Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Tue Oct 21 18:45:08 2025 -0300 Update cartoes.md | * eced6f0 Lilla Xavier &lt;2025018341&gt; Tue Oct 21 18:18:48 2025 -0300 teste | * 2c3e488 Lilla Xavier &lt;2025018341&gt; Tue Oct 21 13:49:16 2025 -0300 Adiciona pasta com dois arquivos .md</li>
+<li>| e072303 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Wed Nov 5 16:45:03 2025 -0300 <a class="el" href="_hospede_8h.html">Hospede.h</a> e .cpp |/ <br  />
+</li>
+<li>d5b8e90 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Oct 21 13:37:47 2025 -0300 Testes criados</li>
+<li>7f0daec liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Oct 21 13:29:10 2025 -0300 Arquivos h</li>
+<li>3a3793f liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Oct 21 13:25:26 2025 -0300 aqruivos .cpp</li>
+<li>af2a8e6 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Oct 21 10:18:16 2025 -0300 criação pasta src e arquivo <a class="el" href="main_8cpp.html" title="Ponto de entrada do sistema de gerenciamento de hotel.">main.cpp</a></li>
+<li>4202139 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Tue Oct 21 10:12:42 2025 -0300 mudança nome de arquivo</li>
+<li>c5228a2 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Oct 9 21:20:21 2025 -0300 Delete livia.txt</li>
+<li>7ca768f marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 21:08:18 2025 -0300 Update teste_malu.txt</li>
+<li>4b85b65 Lilla Xavier &lt;2025018341&gt; Thu Oct 9 20:32:26 2025 -0300 lilla.txt</li>
+<li>dd25cdf liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Oct 9 20:16:58 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> |\ <br  />
+ | * ac829ec Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Thu Oct 9 20:01:32 2025 -0300 Delete commitLILLA | * 4108f45 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 19:31:08 2025 -0300 Create teste_malu.txt</li>
+<li>| b490bfb liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Oct 9 20:16:32 2025 -0300 livia.txt |/ <br  />
+</li>
+<li>10bd4e9 liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Oct 9 19:17:29 2025 -0300 Merge branch 'main' of <a href="https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII">https://github.com/helenabarbosaufmg/TP&amp;mdash;pdsII</a> |\ <br  />
+ | * 282577f marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 19:13:53 2025 -0300 Delete teste_malu.txt</li>
+<li>| bc27a6f liviafviana <a href="#" onclick="location.href='mai'+'lto:'+'liv'+'ia'+'fvi'+'an'+'aa@'+'gm'+'ail'+'.c'+'om'; return false;">livia<span class="obfuscator">.nosp@m.</span>fvia<span class="obfuscator">.nosp@m.</span>naa@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> Thu Oct 9 19:15:40 2025 -0300 Teste de commit livia |/ <br  />
+</li>
+<li>bceec41 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Thu Oct 9 19:04:18 2025 -0300 Update teste_lilla.txt</li>
+<li>3750236 Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Thu Oct 9 18:59:16 2025 -0300 Create teste_lilla.txt</li>
+<li>0c4bc1e Lilla Xavier <a href="#" onclick="location.href='mai'+'lto:'+'lil'+'la'+'del'+'uc'+'as2'+'5@'+'gma'+'il'+'.co'+'m'; return false;">lilla<span class="obfuscator">.nosp@m.</span>delu<span class="obfuscator">.nosp@m.</span>cas25<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> Thu Oct 9 18:51:29 2025 -0300 Create commitLILLA</li>
+<li>d7970e6 marialuisabraga-ux <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'lui'+'sa'+'mal'+'ub'+'rag'+'a@'+'gma'+'il'+'.co'+'m'; return false;">maria<span class="obfuscator">.nosp@m.</span>luis<span class="obfuscator">.nosp@m.</span>amalu<span class="obfuscator">.nosp@m.</span>brag<span class="obfuscator">.nosp@m.</span>a@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 18:48:31 2025 -0300 Create teste_malu.txt</li>
+<li>209d7a6 helenabarbosaufmg <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 18:43:39 2025 -0300 <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a></li>
+<li>9d6b8b4 helenabarbosaufmg <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 18:43:01 2025 -0300 <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a></li>
+<li>6b4db9f Helena de Oliveira Barbosa <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 15:55:57 2025 -0300 test: commit de validação do fluxo - Helena</li>
+<li>4da325a helenabarbosaufmg <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'en'+'aob'+'ar'+'bos'+'a8'+'@gm'+'ai'+'l.c'+'om'; return false;">helen<span class="obfuscator">.nosp@m.</span>aoba<span class="obfuscator">.nosp@m.</span>rbosa<span class="obfuscator">.nosp@m.</span>8@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> Thu Oct 9 15:07:11 2025 -0300 Initial commit </li>
 </ul>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>

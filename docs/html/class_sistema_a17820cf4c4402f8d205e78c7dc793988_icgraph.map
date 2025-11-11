@@ -1,0 +1,10 @@
+<map id="Sistema::hospedeCadastrado" name="Sistema::hospedeCadastrado">
+<area shape="rect" id="Node000001" title=" " alt="" coords="334,31,527,57"/>
+<area shape="rect" id="Node000002" href="$class_sistema.html#a866bfc58977f5297921b099faae2c835" title=" " alt="" coords="103,5,286,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="318,35,286,31,287,26,319,29"/>
+<area shape="rect" id="Node000004" href="$class_sistema.html#ab5d01c8fea43349d61ff29453a8917e1" title=" " alt="" coords="119,56,270,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="319,59,271,64,270,59,318,53"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Função principal do sistema de hotel." alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,38,55,43,55,38,89,32"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="103,58,55,50,56,45,104,53"/>
+</map>

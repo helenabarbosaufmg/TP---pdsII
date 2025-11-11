@@ -1,0 +1,21 @@
+<map id="Sistema::criarReserva" name="Sistema::criarReserva">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,208,157,235"/>
+<area shape="rect" id="Node000002" href="$class_hospede.html#aa214ce430b6b5b37aac6f3b7a56bbc5c" title="Retorna o código identificador do hóspede." alt="" coords="235,5,368,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,207,101,173,126,128,160,82,203,42,219,33,222,37,206,46,164,85,130,131,105,176,90,209"/>
+<area shape="rect" id="Node000003" href="$class_sistema.html#a17820cf4c4402f8d205e78c7dc793988" title=" " alt="" coords="205,56,398,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="90,206,134,151,166,119,203,92,215,87,217,91,206,97,170,123,138,154,94,209"/>
+<area shape="rect" id="Node000004" href="$class_sistema.html#a1e95f2a5b2be75a479a71efe63b71043" title=" " alt="" coords="221,107,382,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="99,205,145,174,204,143,222,136,224,141,206,148,148,179,102,210"/>
+<area shape="rect" id="Node000005" href="$class_quartos.html#a9c29a38b3c9293bee738f3eca7b28e98" title="Retorna o número identificador do quarto." alt="" coords="236,157,367,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="142,205,225,185,226,191,143,210"/>
+<area shape="rect" id="Node000006" href="$class_reserva.html#a3df24f4285d07d5d287a02abeaae4d30" title="Retorna a data de check&#45;in da reserva." alt="" coords="233,208,370,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="157,219,217,219,217,224,157,224"/>
+<area shape="rect" id="Node000007" href="$class_reserva.html#acb9430861a703b226bc0c2552278ed97" title="Retorna a data de check&#45;out da reserva." alt="" coords="228,259,375,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="143,233,226,252,225,257,142,238"/>
+<area shape="rect" id="Node000008" href="$class_sistema.html#ad8230e486098d6e1bfb2e5ff1dc9755a" title=" " alt="" coords="208,309,394,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="102,233,148,264,206,295,224,302,222,307,204,300,145,269,99,238"/>
+<area shape="rect" id="Node000009" href="$class_reserva.html#a4795c2154ab9a851d080e71bb65c0452" title="Retorna o hóspede associado à reserva." alt="" coords="231,360,372,387"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="94,233,138,288,170,319,206,346,218,352,216,357,203,350,166,323,134,292,90,237"/>
+<area shape="rect" id="Node000010" href="$class_reserva.html#a459fe5e23ee1be0486086a4502e3fc87" title="Retorna o quarto reservado." alt="" coords="238,411,365,437"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="90,234,105,267,130,311,164,357,206,397,224,406,222,411,203,401,160,361,126,314,101,270,85,236"/>
+</map>

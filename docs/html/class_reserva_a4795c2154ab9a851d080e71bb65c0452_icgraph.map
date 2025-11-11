@@ -1,0 +1,12 @@
+<map id="Reserva::RHospede" name="Reserva::RHospede">
+<area shape="rect" id="Node000001" title="Retorna o hóspede associado à reserva." alt="" coords="359,64,499,91"/>
+<area shape="rect" id="Node000002" href="$class_sistema.html#ab5d01c8fea43349d61ff29453a8917e1" title=" " alt="" coords="131,5,282,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="366,62,310,47,266,35,267,30,312,41,367,57"/>
+<area shape="rect" id="Node000004" href="$class_sistema.html#a8f75885af16b3e03ee0e2e459c0c2404" title=" " alt="" coords="103,56,311,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="344,80,311,80,311,75,344,75"/>
+<area shape="rect" id="Node000005" href="$class_sistema.html#af49ee03765c1fc70add0ca0bd35460ff" title=" " alt="" coords="110,123,304,165"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="368,98,281,125,280,119,367,93"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Função principal do sistema de hotel." alt="" coords="5,35,55,61"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,36,56,47,55,41,115,31"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="87,60,55,55,56,49,88,55"/>
+</map>

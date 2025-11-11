@@ -1,0 +1,13 @@
+<map id="Quartos::QNumero" name="Quartos::QNumero">
+<area shape="rect" id="Node000001" title="Retorna o número identificador do quarto." alt="" coords="359,56,490,83"/>
+<area shape="rect" id="Node000002" href="$class_sistema.html#a0d8dbb4fa2ab6df84be4ed0c4c051aaa" title=" " alt="" coords="122,5,292,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="348,54,267,35,268,30,350,49"/>
+<area shape="rect" id="Node000004" href="$class_sistema.html#ab5d01c8fea43349d61ff29453a8917e1" title=" " alt="" coords="131,56,282,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="344,72,283,72,283,67,344,67"/>
+<area shape="rect" id="Node000005" href="$class_sistema.html#a8f75885af16b3e03ee0e2e459c0c2404" title=" " alt="" coords="103,107,311,149"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="358,90,289,109,288,103,357,85"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Função principal do sistema de hotel." alt="" coords="5,56,55,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,39,103,47,56,63,54,58,102,41,130,34"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="115,72,55,72,55,67,115,67"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="121,104,102,97,54,80,56,75,104,92,123,99"/>
+</map>

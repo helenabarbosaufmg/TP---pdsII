@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['linguagem_0',['4. Ferramentas e Linguagem',['../index.html#autotoc_md4',1,'']]],
-  ['link_20do_20vídeo_20de_20execução_1',['14. Link do Vídeo de Execução',['../index.html#autotoc_md14',1,'']]]
+  ['instruções_20de_20uso_0',['10. Instruções de Uso',['../index.html#autotoc_md10',1,'']]],
+  ['itens_20fora_20do_20escopo_1',['9. Itens Fora do Escopo',['../index.html#autotoc_md9',1,'']]]
 ];

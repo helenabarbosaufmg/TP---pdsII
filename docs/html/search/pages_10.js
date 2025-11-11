@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['instruções_20de_20uso_0',['10. Instruções de Uso',['../index.html#autotoc_md10',1,'']]],
-  ['itens_20fora_20do_20escopo_1',['9. Itens Fora do Escopo',['../index.html#autotoc_md9',1,'']]]
+  ['hóspede_20já_20previamente_20cadastrado_0',['&lt;b&gt;Opção 4 (Cadastrar nova reserva de hóspede já previamente cadastrado)&lt;/b&gt;',['../index.html#autotoc_md15',1,'']]],
+  ['helena_1',['13. Documentação: Doxygen (Helena)',['../index.html#autotoc_md21',1,'']]],
+  ['hospede_20no_20quarto_20previamente_20cadastrado_2',['&lt;b&gt;Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)&lt;/b&gt;',['../index.html#autotoc_md13',1,'']]]
 ];

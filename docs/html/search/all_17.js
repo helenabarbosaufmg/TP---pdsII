@@ -1,12 +1,17 @@
 var searchData=
 [
-  ['qnumero_0',['QNumero',['../class_quartos.html#a9c29a38b3c9293bee738f3eca7b28e98',1,'Quartos']]],
-  ['qpreco_1',['QPreco',['../class_quartos.html#ab9829fdba2f9e15041192f9b06b99911',1,'Quartos']]],
-  ['qtipo_2',['QTipo',['../class_quartos.html#a2a2a8efcf79e40dcbad6020b5931beca',1,'Quartos']]],
-  ['quarto_3',['quarto',['../class_reserva.html#a524ce900c49b6fc5673ece4d3efac98c',1,'Reserva']]],
-  ['quartocadastrado_4',['quartoCadastrado',['../class_sistema.html#add783f8f18c922b1ff76f7109b87145f',1,'Sistema']]],
-  ['quartos_5',['Quartos',['../class_quartos.html',1,'Quartos'],['../class_quartos.html#aa6a77b7593474a2998f541a282daf3fd',1,'Quartos::Quartos()'],['../class_quartos.html#a76b943e4241078ef24a0c965d978f8b1',1,'Quartos::Quartos(int numero, std::string tipo, double preco)']]],
-  ['quartos_6',['quartos',['../class_sistema.html#a2891c3b5ce65ca38a05ff3b793910d23',1,'Sistema']]],
-  ['quartos_2ecpp_7',['Quartos.cpp',['../_quartos_8cpp.html',1,'']]],
-  ['quartos_2eh_8',['Quartos.h',['../_quartos_8h.html',1,'']]]
+  ['objetivos_20do_20projeto_0',['3. Objetivos do Projeto',['../index.html#autotoc_md3',1,'']]],
+  ['ocupado_1',['ocupado',['../class_quartos.html#a2778b45310962fb621ba78dc20bc87f1',1,'Quartos']]],
+  ['ocupar_2',['ocupar',['../class_quartos.html#a5a35a8611f903d3c7e898f89957e2e20',1,'Quartos']]],
+  ['ocupar_20quarto_3',['&lt;b&gt;Opção 6 (Ocupar quarto)&lt;/b&gt;',['../index.html#autotoc_md17',1,'']]],
+  ['ocuparquarto_4',['ocuparQuarto',['../class_sistema.html#a2cfde648109d395e55ddf6ad379f3190',1,'Sistema']]],
+  ['opção_200_20sair_5',['&lt;b&gt;Opção 0 (Sair)&lt;/b&gt;',['../index.html#autotoc_md19',1,'']]],
+  ['opção_201_20cadastrar_20novo_20quarto_6',['&lt;b&gt;Opção 1 (cadastrar novo quarto)&lt;/b&gt;',['../index.html#autotoc_md12',1,'']]],
+  ['opção_202_20cadastrar_20novo_20hospede_20no_20quarto_20previamente_20cadastrado_7',['&lt;b&gt;Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)&lt;/b&gt;',['../index.html#autotoc_md13',1,'']]],
+  ['opção_203_20pesquisar_20número_20de_20reserva_8',['&lt;b&gt;Opção 3 (Pesquisar número de reserva)&lt;/b&gt;',['../index.html#autotoc_md14',1,'']]],
+  ['opção_204_20cadastrar_20nova_20reserva_20de_20hóspede_20já_20previamente_20cadastrado_9',['&lt;b&gt;Opção 4 (Cadastrar nova reserva de hóspede já previamente cadastrado)&lt;/b&gt;',['../index.html#autotoc_md15',1,'']]],
+  ['opção_205_20status_20de_20reservas_20listas_20quartos_10',['&lt;b&gt;Opção 5 (Status de reservas(Listas quartos))&lt;/b&gt;',['../index.html#autotoc_md16',1,'']]],
+  ['opção_206_20ocupar_20quarto_11',['&lt;b&gt;Opção 6 (Ocupar quarto)&lt;/b&gt;',['../index.html#autotoc_md17',1,'']]],
+  ['opção_207_20liberar_20quarto_12',['&lt;b&gt;Opção 7 (Liberar quarto)&lt;/b&gt;',['../index.html#autotoc_md18',1,'']]],
+  ['organização_20do_20projeto_13',['7. Organização do Projeto',['../index.html#autotoc_md7',1,'']]]
 ];

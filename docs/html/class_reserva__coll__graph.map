@@ -1,0 +1,7 @@
+<map id="Reserva" name="Reserva">
+<area shape="rect" id="Node000001" title="Representa uma reserva de hospedagem no sistema do hotel." alt="" coords="54,104,124,131"/>
+<area shape="rect" id="Node000002" href="$class_hospede.html" title="Representa um hóspede do sistema de hotel." alt="" coords="5,5,79,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,47,53,79,73,102,69,105,48,81,39,48"/>
+<area shape="rect" id="Node000003" href="$class_quartos.html" title="Representa um quarto do hotel." alt="" coords="103,5,170,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,47,110,81,98,105,93,102,105,79,122,45"/>
+</map>

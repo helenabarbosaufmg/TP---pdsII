@@ -1,0 +1,5 @@
+<map id="Hospede::Hospede" name="Hospede::Hospede">
+<area shape="rect" id="Node000001" title="Construtor que inicializa um hóspede com dados completos." alt="" coords="5,5,139,32"/>
+<area shape="rect" id="Node000002" href="$_hospede_8cpp.html#a4ba68f8bd992fc5bb629be615bd7378b" title="Função auxiliar que verifica se uma string contém apenas números." alt="" coords="187,5,311,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,16,171,16,171,21,139,21"/>
+</map>

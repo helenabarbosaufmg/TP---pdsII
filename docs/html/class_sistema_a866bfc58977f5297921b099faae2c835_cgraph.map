@@ -1,0 +1,11 @@
+<map id="Sistema::cadastrarHospede" name="Sistema::cadastrarHospede">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,189,108"/>
+<area shape="rect" id="Node000002" href="$class_hospede.html#aa214ce430b6b5b37aac6f3b7a56bbc5c" title="Retorna o código identificador do hóspede." alt="" coords="267,5,400,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,78,236,41,261,34,263,39,237,47,134,83"/>
+<area shape="rect" id="Node000003" href="$class_sistema.html#a17820cf4c4402f8d205e78c7dc793988" title=" " alt="" coords="237,56,430,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,82,221,79,221,84,189,87"/>
+<area shape="rect" id="Node000004" href="$class_hospede.html#a41b3ad99025bbcf9a6e7e811d891b79e" title="Retorna o documento de identificação (RG) do hóspede." alt="" coords="278,107,389,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="189,102,263,110,262,115,189,107"/>
+<area shape="rect" id="Node000005" href="$class_hospede.html#ae79a0fd4b49489fcde85744d2d7919cb" title="Retorna o número de telefone do hóspede." alt="" coords="263,157,404,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="134,106,237,143,263,150,261,155,236,148,132,111"/>
+</map>
