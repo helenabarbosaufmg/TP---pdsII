@@ -1,6 +1,6 @@
 TARGET = main
 CXX = g++
-CXXFLAGS = -Wall -I include  #mostra erros e procura .h na pasta include
+CXXFLAGS = -Wall -I include  #mostra erros e procura os .h na pasta include
 
 all: $(TARGET)
 
