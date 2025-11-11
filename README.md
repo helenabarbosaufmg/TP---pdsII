@@ -460,4 +460,4 @@ Observação: todos os integrantes participaram da discussão na escolha do tema
 - ![helenabarbosaufmg's Commits](graficos/helenabarbosaufmg_Commits.png)
 - ![lilladelucas25's Commits](graficos/lilladelucas25_Commits.png)
 - ![liviafviana's Commits](graficos/liviafviana_Commits.png)
-- ![marialuisabraga-ux's Commits](marialuisabraga-ux_Commits.png)
+- ![marialuisabraga-ux Commits](graficos/marialuisabraga-ux_Commits.png)
