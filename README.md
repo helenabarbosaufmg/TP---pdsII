@@ -103,7 +103,7 @@ Preco da diaria: 120
 Quarto cadastrado com sucesso!
 ```
 
-**Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)**
+### **Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)**
 Entrada: 
 ```
 2
@@ -136,7 +136,7 @@ Data de check-out: 15/11/2025
 Reserva criada com sucesso!
 ```
 
-**Opção 3 (Pesquisar numero de reserva)**
+### **Opção 3 (Pesquisar numero de reserva)**
 Entrada:
 ```
 3
@@ -165,7 +165,7 @@ Tipo: Solteiro
 Preco diaria: R$ 120
 ```
 
-**Opção 4 (Cadastrar nova reserva de hospede ja previamente cadastrado)**
+### **Opção 4 (Cadastrar nova reserva de hospede ja previamente cadastrado)**
 Entrada:
 ```
 4
@@ -208,7 +208,7 @@ Data de check-out: 15/11/2025
 Reserva criada com sucesso!
 ```
 
-**Opção 5 (Status de reservas(Listas quartos))**
+### **Opção 5 (Status de reservas(Listas quartos))**
 Entrada:
 ```
 5
@@ -218,7 +218,7 @@ Saída:
 Status de Reservas (Lista de Quartos)
 Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: OCUPADO
 ``` 
-**Opção 6 (Ocupar quarto)**
+### **Opção 6 (Ocupar quarto)**
 Entrada:
 ```
 6
@@ -236,7 +236,7 @@ Saída:
 Quarto 1 ja esta OCUPADO.
 ```
 
-**Opção 7 (Liberar quarto)**
+### **Opção 7 (Liberar quarto)**
 Entrada:
 ```
 7
@@ -254,7 +254,7 @@ Saída:
 Quarto 1 agora esta DISPONIVEL.
 ```
 
-**Opção 0 (Sair)**
+### **Opção 0 (Sair)**
 Entrada:
 ```
 0
