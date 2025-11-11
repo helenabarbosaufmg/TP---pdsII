@@ -456,3 +456,8 @@ Observação: todos os integrantes participaram da discussão na escolha do tema
 ## 18. Evidências no Github: 
 
 - **Commits:**
+- ![grafico commits over time]("graficos/Commits over time.png")
+- ![helenabarbosaufmg's Commits]("graficos/helenabarbosaufmg's Commits.png")
+- ![lilladelucas25's Commits]("graficos/lilladelucas25's Commits.png")
+- ![liviafviana's Commits]("graficos/liviafviana's Commits.png")
+- ![marialuisabraga-ux's Commits]("marialuisabraga-ux's Commits.png")
