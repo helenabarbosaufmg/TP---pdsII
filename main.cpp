@@ -99,7 +99,6 @@ int main() {
                 } else if (quartoSelecionado->estaOcupado()) {
                     cout << "Quarto já esta ocupado. Não é possível alocar novo hóspede.\n";
                 } else {
-                    int codigo;
                     string nome, rg, telefone, email;
                     string checkIn, checkOut;
 
