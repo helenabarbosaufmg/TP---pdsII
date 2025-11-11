@@ -86,6 +86,22 @@ O sistema de gerenciamento de hotel tem como funções:
 (...) 
 
 ## 10. Instruções de Uso 
+- **Para Linux:**
+Compilar com MakeFile:
+`make run`
+`make`
+
+- **Para MacOS:**
+Compilar no terminal com g++: 
+```text
+g++ main.cpp src/Hospede.cpp src/Quartos.cpp src/Reserva.cpp src/Sistema.cpp -I include -std=c++17 -o main
+```
+`./main`
+- **Para Windows:**
+Compilar com MakeFile:
+`make run`
+`make`
+OBS: make clean não funciona no Windows. 
 
 ## 11. Exemplos de Uso (Entradas e Saídas)
 
@@ -265,7 +281,7 @@ Saindo do sistema...
 ```
 
 
-## 12. Programação Defensiva (Malu) 
+## 12. Programação Defensiva 
 - **Em Quartos.cpp:**
 ```text
 #include <iostream>
