@@ -111,7 +111,7 @@ void Sistema::cadastrarQuarto(Quartos q) {
     }
     string tipo = q.QTipo();
     for (char& c : tipo) c = toupper(c);
-    if (tipo != "Solteiro" && tipo != "Casal" && tipo != "Luxo") {
+    if (tipo != "SOLTEIRO" && tipo != "CASAL" && tipo != "LUXO") {
         cout << "Erro: tipo de quarto invalido. Use 'Solteiro', 'Casal' ou 'Luxo'." << endl;
         return;
     }
