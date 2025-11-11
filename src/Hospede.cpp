@@ -132,7 +132,7 @@ void Hospede::H_Email(const string& email) {
  * \brief Exibe todas as informações do hóspede no console.
  */
 void Hospede::Hospede_info() const {
-    cout << "Código do Hospede: " << codigo << endl;
+    cout << "Numero de reserva: " << codigo << endl;
     cout << "Nome: " << nome << endl;
     cout << "RG: " << rg << endl;
     cout << "Telefone: " << telefone << endl;

@@ -99,14 +99,13 @@ int main() {
                 } else if (quartoSelecionado->estaOcupado()) {
                     cout << "Quarto ja esta ocupado. Nao e possivel alocar novo hospede.\n";
                 } else {
-                    int codigo;
                     string nome, rg, telefone, email;
                     string checkIn, checkOut;
 
                     cout << "\n\tDados do Hospede\n";
-                    cout << "Codigo do hospede: ";
-                    cin >> codigo;
-                    limparEntrada();
+                    int codigo = proximaReserva;
+                    cout << "Número de reserva: ";
+                    cout << codigo << endl;
 
                     cout << "Nome: ";
                     getline(cin, nome);
@@ -148,7 +147,7 @@ else if (opcao == 4) {
         cout << "\nÉ preciso ter ao menos um hospede e um quarto cadastrados.\n";
     } else {
         int codigoHospede;
-        cout << "Codigo do hospede (ja cadastrado): ";
+        cout << "Númedo de reserva do hospede (ja cadastrado): ";
         cin >> codigoHospede;
         limparEntrada();
 
@@ -159,7 +158,7 @@ else if (opcao == 4) {
         } else {
             // Exibe os dados do hóspede
             cout << "\nDados do Hóspede:\n";
-            cout << "Codigo do hospede: "   << h->HCodigo()   << endl;
+            cout << "Numero de reserva: "   << h->HCodigo()   << endl;
             cout << "Nome: "     << h->HNome()     << endl;
             cout << "RG: "       << h->HRG()       << endl;
             cout << "Telefone: " << h->HTelefone() << endl;
