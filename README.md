@@ -78,12 +78,13 @@ O sistema de gerenciamento de hotel tem como funções:
   - Verificação da disponibilidade do quarto;
   - Cancelamento de reserva;
   - Listagem do status do quarto;
-  - (...)
+  - Cadastro de hóspede salvo para novas reservas. 
 
 
 ## 9. Itens Fora do Escopo
 
-(...) 
+- Cadastro de hóspede salvo para novas reservas. 
+
 
 ## 10. Instruções de Uso 
 - **Para Linux:**
@@ -107,6 +108,13 @@ Compilar com MakeFile:
 `make`
 
 OBS: make clean não funciona no Windows. 
+
+Observações de uso:
+- Para cadastrar uma reserva, é necessário que já haja um quarto registrado;
+- Quando colocar o tipo do quarto, usar a primeira letra maiúscula;
+- Colocar datas de check-in e check-out no modelo: dd/mm/aaaa;
+- Telefone e RG só aceitam números (sem caracteres especiais). 
+  
 
 ## 11. Exemplos de Uso (Entradas e Saídas)
 
@@ -143,7 +151,7 @@ Entrada:
 Saída:
 ```
 Dados do Hóspede
-Código do hóspede: 01
+Número de reserva: 1
 Nome: Joao Silva
 RG: 12345678990
 Telefone: 31912345678
@@ -193,7 +201,7 @@ Entrada:
 ```
 Saída:
 ```
-Código do hóspede (já cadastrado):
+Número de reserva do hospede (já cadastrado):
 ```
 Entrada: 
 ```
@@ -238,6 +246,7 @@ Saída:
 ```
 Status de Reservas (Lista de Quartos)
 Quarto 1 - Tipo: Solteiro - Preço: R$ 120 - Status: OCUPADO
+Quarto 2 - Tipo: Casal - Preço R$ 350 - Status: OCUPADO
 ``` 
 ### **Opção 6 (Ocupar quarto)**
 Entrada:
