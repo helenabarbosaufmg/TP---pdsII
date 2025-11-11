@@ -88,7 +88,9 @@ O sistema de gerenciamento de hotel tem como funções:
 ## 10. Instruções de Uso 
 - **Para Linux:**
 Compilar com MakeFile:
+
 `make run`
+
 `make`
 
 - **Para MacOS:**
@@ -99,8 +101,11 @@ g++ main.cpp src/Hospede.cpp src/Quartos.cpp src/Reserva.cpp src/Sistema.cpp -I 
 `./main`
 - **Para Windows:**
 Compilar com MakeFile:
+
 `make run`
+
 `make`
+
 OBS: make clean não funciona no Windows. 
 
 ## 11. Exemplos de Uso (Entradas e Saídas)
