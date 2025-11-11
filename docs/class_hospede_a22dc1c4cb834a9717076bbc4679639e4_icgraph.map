@@ -1,0 +1,10 @@
+<map id="Hospede::HEmail" name="Hospede::HEmail">
+<area shape="rect" id="Node000001" title="Retorna o endereço de e&#45;mail do hóspede." alt="" coords="359,35,483,61"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Função principal do sistema de hotel." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="370,32,311,17,238,11,166,11,55,18,55,13,166,5,238,5,311,12,371,27"/>
+<area shape="rect" id="Node000003" href="$class_sistema.html#a8f75885af16b3e03ee0e2e459c0c2404" title=" " alt="" coords="103,27,311,69"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="343,51,312,51,312,45,343,45"/>
+<area shape="rect" id="Node000004" href="$class_sistema.html#af49ee03765c1fc70add0ca0bd35460ff" title=" " alt="" coords="110,93,304,136"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="362,69,279,95,277,90,360,64"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="87,31,55,25,56,20,88,25"/>
+</map>

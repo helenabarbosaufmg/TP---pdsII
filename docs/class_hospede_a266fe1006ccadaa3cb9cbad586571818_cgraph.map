@@ -1,0 +1,5 @@
+<map id="Hospede::H_Telefone" name="Hospede::H_Telefone">
+<area shape="rect" id="Node000001" title="Define ou altera o número de telefone do hóspede." alt="" coords="5,5,153,32"/>
+<area shape="rect" id="Node000002" href="$_hospede_8cpp.html#a4ba68f8bd992fc5bb629be615bd7378b" title="Função auxiliar que verifica se uma string contém apenas números." alt="" coords="201,5,325,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,16,185,16,185,21,153,21"/>
+</map>

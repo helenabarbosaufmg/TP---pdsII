@@ -1,0 +1,9 @@
+<map id="somenteNumeros" name="somenteNumeros">
+<area shape="rect" id="Node000001" title="Função auxiliar que verifica se uma string contém apenas números." alt="" coords="201,56,325,83"/>
+<area shape="rect" id="Node000002" href="$class_hospede.html#a392d462f9be1db1f3578f161c180f8e6" title="Define ou altera o documento de identificação (RG) do hóspede." alt="" coords="20,5,138,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,54,129,35,131,30,197,49"/>
+<area shape="rect" id="Node000003" href="$class_hospede.html#a266fe1006ccadaa3cb9cbad586571818" title="Define ou altera o número de telefone do hóspede." alt="" coords="5,56,153,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,72,153,72,153,67,185,67"/>
+<area shape="rect" id="Node000004" href="$class_hospede.html#a87ba718623c7aa95634522b52bbe2b54" title="Construtor que inicializa um hóspede com dados completos." alt="" coords="12,107,146,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="197,90,131,109,129,103,196,85"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Reserva::RCheckOut" name="Reserva::RCheckOut">
+<area shape="rect" id="Node000001" title="Retorna a data de check&#45;out da reserva." alt="" coords="359,35,506,61"/>
+<area shape="rect" id="Node000002" href="$class_sistema.html#ab5d01c8fea43349d61ff29453a8917e1" title=" " alt="" coords="131,5,282,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="343,39,283,31,283,26,344,34"/>
+<area shape="rect" id="Node000004" href="$class_sistema.html#a8f75885af16b3e03ee0e2e459c0c2404" title=" " alt="" coords="103,56,311,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="344,62,312,66,311,61,343,57"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Função principal do sistema de hotel." alt="" coords="5,35,55,61"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,36,56,47,55,41,115,31"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="87,60,55,55,56,49,88,55"/>
+</map>

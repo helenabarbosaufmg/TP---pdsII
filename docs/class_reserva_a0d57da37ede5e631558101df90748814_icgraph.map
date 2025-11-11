@@ -1,0 +1,9 @@
+<map id="Reserva::RNumeroReserva" name="Reserva::RNumeroReserva">
+<area shape="rect" id="Node000001" title="Retorna o número identificador da reserva." alt="" coords="359,47,542,73"/>
+<area shape="rect" id="Node000002" href="$class_sistema.html#a8f75885af16b3e03ee0e2e459c0c2404" title=" " alt="" coords="103,5,311,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="343,48,311,44,312,38,344,43"/>
+<area shape="rect" id="Node000004" href="$class_sistema.html#af49ee03765c1fc70add0ca0bd35460ff" title=" " alt="" coords="110,72,304,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="344,77,305,83,304,77,343,72"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Função principal do sistema de hotel." alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
