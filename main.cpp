@@ -1,3 +1,11 @@
+/**
+ * \file main.cpp
+ * \brief Ponto de entrada do sistema de gerenciamento de hotel.
+ * \details Este programa permite cadastrar quartos, hóspedes e reservas,
+ *          além de consultar e atualizar o status de quartos e reservas
+ *          por meio de um menu interativo no console.
+ */
+
 #include <iostream>
 #include <string>
 #include <limits>
@@ -8,12 +16,23 @@
 
 using namespace std;
 
+/**
+ * \brief Função principal do sistema de hotel.
+ * \details Cria um objeto Sistema e apresenta um menu de operações para o usuário,
+ *          como cadastro de quartos e hóspedes, criação de reservas, busca de reservas,
+ *          listagem de status de quartos, ocupação e liberação de quartos.
+ * \return 0 quando o programa é encerrado com sucesso.
+ */
 int main() {
     Sistema sistema;
     int opcao;
     int proximaReserva = 1;
 
-    // Funcao para limpar o buffer de entrada
+    /**
+     * \brief Função lambda para limpar o buffer de entrada.
+     * \details Descarta caracteres remanescentes no buffer de std::cin,
+     *          evitando problemas com leituras subsequentes.
+     */
     auto limparEntrada = []() {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     };
