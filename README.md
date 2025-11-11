@@ -101,6 +101,15 @@ Numero do quarto: 01
 Tipo (ex: Solteiro, Casal, Luxo): Casal
 Preco da diaria: 120
 ```
+**Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)**
+```
+```
+**Opção 3 (Pesquisar numero de reserva)**
+**Opção 4 (Cadastrar nova reserva de hospede ja previamente cadastrado)**
+**Opção 5 (Status de reservas(Listas quartos))**
+**Opção 6 (Ocupar quarto)**
+**Opção 7 (Liberar quarto)**
+**Opção 0 (Sair)**
 
 
 ## 12. Programação Defensiva (Malu) 
