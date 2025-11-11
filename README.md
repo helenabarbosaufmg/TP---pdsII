@@ -63,7 +63,9 @@ Observação: caso o projeto seja testado manualmente (sem make), é necessário
 - Documentação gerada pelo Doxygen (docs/)
 - Makefile
 - README.md
+  
   Os módulos principais, ou seja, os conjuntos de código com uma função específica no programa são:
+  
 - Hospede: gerencia os dados dos hóspedes do hotel (nomes, CPF's, contato, check-in, check-out);
 - Quartos: armazena informações das acomodações do hotel (número, tipo, status);
 - Reserva: armazena informações e estabelece um número para cada reserva feita;
@@ -428,8 +430,10 @@ return 0;
 }
 ```
 
-## 13. Documentação: Doxygen (Helena) 
-(...)
+## 13. Documentação: Doxygen 
+
+https://helenabarbosaufmg.github.io/TP---pdsII/
+
 ## 14. Link do Vídeo de Execução
 
 https://youtu.be/TOLzhTNTRjs?si=N6fCg0efZufoLZCO
