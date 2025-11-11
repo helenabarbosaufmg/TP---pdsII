@@ -1,3 +1,11 @@
+/**
+ * \file main.cpp
+ * \brief Ponto de entrada do sistema de gerenciamento de hotel.
+ * \details Este programa permite cadastrar quartos, hóspedes e reservas,
+ *          além de consultar e atualizar o status de quartos e reservas
+ *          por meio de um menu interativo no console.
+ */
+
 #include <iostream>
 #include <string>
 #include <limits>
@@ -8,12 +16,27 @@
 
 using namespace std;
 
+/**
+ * \brief Função principal do sistema de hotel.
+ * \details Cria um objeto Sistema e apresenta um menu de operações para o usuário,
+ *          como cadastro de quartos e hóspedes, criação de reservas, busca de reservas,
+ *          listagem de status de quartos, ocupação e liberação de quartos.
+ * \return 0 quando o programa é encerrado com sucesso.
+ */
 int main() {
     Sistema sistema;
     int opcao;
     int proximaReserva = 1;
 
+<<<<<<< HEAD
     // Funcao para limpar o buffer de entrada
+=======
+    /**
+     * \brief Função lambda para limpar o buffer de entrada.
+     * \details Descarta caracteres remanescentes no buffer de std::cin,
+     *          evitando problemas com leituras subsequentes.
+     */
+>>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
     auto limparEntrada = []() {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     };
@@ -85,9 +108,15 @@ int main() {
                     string checkIn, checkOut;
 
                     cout << "\n\tDados do Hospede\n";
+<<<<<<< HEAD
                     cout << "Codigo do hospede: ";
                     cin >> codigo;
                     limparEntrada();
+=======
+                    int codigo = proximaReserva;
+                    cout << "Número de reserva: ";
+                    cout << codigo << endl;
+>>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
 
                     cout << "Nome: ";
                     getline(cin, nome);
@@ -129,7 +158,11 @@ else if (opcao == 4) {
         cout << "\nÉ preciso ter ao menos um hospede e um quarto cadastrados.\n";
     } else {
         int codigoHospede;
+<<<<<<< HEAD
         cout << "Codigo do hospede (ja cadastrado): ";
+=======
+        cout << "Númedo de reserva do hospede (ja cadastrado): ";
+>>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
         cin >> codigoHospede;
         limparEntrada();
 
@@ -140,7 +173,11 @@ else if (opcao == 4) {
         } else {
             // Exibe os dados do hóspede
             cout << "\nDados do Hóspede:\n";
+<<<<<<< HEAD
             cout << "Codigo: "   << h->HCodigo()   << endl;
+=======
+            cout << "Numero de reserva: "   << h->HCodigo()   << endl;
+>>>>>>> 4fbd88908279260944f02bae50c4da46e1ac975e
             cout << "Nome: "     << h->HNome()     << endl;
             cout << "RG: "       << h->HRG()       << endl;
             cout << "Telefone: " << h->HTelefone() << endl;

@@ -89,152 +89,180 @@ O sistema de gerenciamento de hotel tem como funções:
 
 ## 11. Exemplos de Uso (Entradas e Saídas)
 
-**Opção 4 (cadastrar novo quarto)**
-- Entrada:
-  
-```text 
-
-SISTEMA DO HOTEL
-1 - Cadastrar nova reserva
-2 - Pesquisar hóspede pelo número de reserva
-3 - Pesquisar número de reserva
-4 - Cadastrar novo quarto
-5 - Status de reservas (Listar quartos)
-6 - Ocupar quarto
-7 - Liberar quarto
-0 - Sair
-
-Escolha: 4
+### **Opção 1 (cadastrar novo quarto)**
+Entrada:
 ```
-
-```text 
-Cadastro do Quarto
-    
-Número do quarto: 101
-
+1
+```
+Saída: 
+```
+Cadastro de Quarto
+Número do quarto: 01
 Tipo (ex: Solteiro, Casal, Luxo): Casal
-
-Preço da diária: 250` 
+Preço da diaria: 120
+Quarto cadastrado com sucesso!
 ```
 
-- Saída:
-  
-`Quarto cadastrado com sucesso!`
+### **Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)**
+Entrada: 
+```
+2
+```
+Saída: 
+```
+Quartos cadastrados:
+Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: DISPONIVEL
 
-
-**Opção 1 (cadastrar nova reserva)**
-
-- Entrada:
-```text  
-Escolha: 1
-
-    Cadastro de Reserva
-    
-Número da reserva (gerado automaticamente): 1
-
-Nome: João Silva
-
-RG: 1234567
-
-Telefone: 32988887777
-
-Email: joao@example.com
-
-Digite o número do quarto para esta reserva: 101
-
-Data de check-in: 10/11/2025
-
-Data de check-out: 12/11/2025
+Digite o número do quarto para este hóspede:
+```
+Entrada:
+```
+1
+```
+Saída:
+```
+Dados do Hóspede
+Código do hóspede: 01
+Nome: Joao Silva
+RG: 12345678990
+Telefone: 31912345678
+Email: joaosilva@gmail.com
+Hóspede cadastrado com sucesso.
+```
+Saída:
+```
+Data de check-in: 12/11/2025
+Data de check-out: 15/11/2025
+Reserva criada com sucesso!
 ```
 
-
-- Saída:
-```text 
-Reserva cadastrada com sucesso!
-
-Número da reserva: 1
-
-Quarto: 101
+### **Opção 3 (Pesquisar número de reserva)**
+Entrada:
 ```
-**Opção 2 (pesquisar hóspede pelo número de rserva)** 
-- Entrada:
-```text 
-Escolha: 2
-
-Digite o número da reserva do hóspede: 1
-- Saída (se o número existir): 
-Hóspede encontrado:
-
-Número da reserva: 1
-
-Nome: João Silva
-
-RG: 1234567
-
-Telefone: 32988887777
-
-Email: joao@example.com
+3
 ```
-- Saída (se o número não existir):
-```text 
-Escolha: 2
-
-Digite o número da reserva do hóspede: 99
-
-Hóspede não encontrado para este número de reserva.
+Saída:
 ```
-**Opção 3 (pesquisar dados completos da reserva)**
-- Entrada:
-```text  
-Escolha: 3
-
-Digite o número da reserva: 1
+Digite o número da reserva: 01
 ```
-- Saída (se a reserva existir):
-```text  
+Saída:
+```
 Dados da Reserva
-
 Número da reserva: 1
-
-Status: [status da reserva]
-
-Check-in: 10/11/2025
-
-Check-out: 12/11/2025
+Status: Agendada
+Check-in: 12/11/2025
+Check-out: 15/11/2025
 
 Hóspede:
-Número de reserva (ID do hóspede): 1
-
-Nome: João Silva
-
-RG: 1234567
-
-Telefone: 32988887777
-
-Email: joao@example.com
+Nome: Joao Silva
+RG: 12345678990
+Telefone: 31912345678
+Email: joaosilva@gmail.com
 
 Quarto:
-
-Número: 101
-
-Tipo: Casal
-
-Preço diária: R$ 250
+Número: 1
+Tipo: Solteiro
+Preço diária: R$ 120
 ```
-- Saída (se a reserva não existir):
-  
-`Reserva não encontrada.`
 
-**Opção 5 (Listar status do quarto)**
-- Entrada:
-  
-`Escolha: 5`
-- Saída:
-```text 
+### **Opção 4 (Cadastrar nova reserva de hóspede já previamente cadastrado)**
+Entrada:
+```
+4
+```
+Saída:
+```
+Código do hóspede (já cadastrado):
+```
+Entrada: 
+```
+1
+```
+Saída:
+```
+Dados do Hóspede:
+Codigo: 1
+Nome: Joao Silva
+RG: 12345678990
+Telefone: 31912345678
+Email: joaosilva@gmail.com
+
+Quartos cadastrados:
+Quarto 1 - Tipo: Solteiro - Preço: R$ 120 - Status: OCUPADO
+
+Digite o número do quarto para nova reserva (ou 0 para cadastrar um novo quarto):
+```
+Entrada:
+``` 
+0
+```
+Saída:
+```
+Cadastro de Novo Quarto
+Número do quarto: 02
+Tipo (ex: Solteiro, Casal, Luxo): Casal
+Preço da diária: 350
+Quarto cadastrado com sucesso!
+Data de check-in: 12/11/2025
+Data de check-out: 15/11/2025
+Reserva criada com sucesso!
+```
+
+### **Opção 5 (Status de reservas(Listas quartos))**
+Entrada:
+```
+5
+```
+Saída:
+```
 Status de Reservas (Lista de Quartos)
-Quarto 101 - Tipo: Casal - Preço: R$250 - Status: OCUPADO
+Quarto 1 - Tipo: Solteiro - Preço: R$ 120 - Status: OCUPADO
+``` 
+### **Opção 6 (Ocupar quarto)**
+Entrada:
 ```
-OBS: um quarto sem reserva aparecerá como “DISPONÍVEL”
+6
+```
+Saída:
+```
+Número do quarto a ocupar: 
+```
+Entrada:
+```
+1
+```
+Saída: 
+```
+Quarto 1 já esta OCUPADO.
+```
+
+### **Opção 7 (Liberar quarto)**
+Entrada:
+```
+7
+```
+Saída:
+```
+Número do quarto a liberar:
+```
+Entrada:
+```
+1
+```
+Saída:
+```
+Quarto 1 agora esta DISPONIVEL.
+```
+
+### **Opção 0 (Sair)**
+Entrada:
+```
+0
+```
+Saída:
+```
+Saindo do sistema...
+```
 
 
 ## 12. Programação Defensiva (Malu) 
