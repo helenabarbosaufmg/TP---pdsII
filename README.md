@@ -97,9 +97,9 @@ Entrada:
 Saída: 
 ```
 Cadastro de Quarto
-Numero do quarto: 01
+Número do quarto: 01
 Tipo (ex: Solteiro, Casal, Luxo): Casal
-Preco da diaria: 120
+Preço da diaria: 120
 Quarto cadastrado com sucesso!
 ```
 
@@ -113,7 +113,7 @@ Saída:
 Quartos cadastrados:
 Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: DISPONIVEL
 
-Digite o numero do quarto para este hospede:
+Digite o número do quarto para este hóspede:
 ```
 Entrada:
 ```
@@ -121,13 +121,13 @@ Entrada:
 ```
 Saída:
 ```
- Dados do Hospede
-Codigo do hospede: 01
+Dados do Hóspede
+Código do hóspede: 01
 Nome: Joao Silva
 RG: 12345678990
 Telefone: 31912345678
 Email: joaosilva@gmail.com
-Hospede cadastrado com sucesso.
+Hóspede cadastrado com sucesso.
 ```
 Saída:
 ```
@@ -136,43 +136,43 @@ Data de check-out: 15/11/2025
 Reserva criada com sucesso!
 ```
 
-### **Opção 3 (Pesquisar numero de reserva)**
+### **Opção 3 (Pesquisar número de reserva)**
 Entrada:
 ```
 3
 ```
 Saída:
 ```
-Digite o numero da reserva: 01
+Digite o número da reserva: 01
 ```
 Saída:
 ```
 Dados da Reserva
-Numero da reserva: 1
+Número da reserva: 1
 Status: Agendada
 Check-in: 12/11/2025
 Check-out: 15/11/2025
 
-Hospede:
+Hóspede:
 Nome: Joao Silva
 RG: 12345678990
 Telefone: 31912345678
 Email: joaosilva@gmail.com
 
 Quarto:
-Numero: 1
+Número: 1
 Tipo: Solteiro
-Preco diaria: R$ 120
+Preço diária: R$ 120
 ```
 
-### **Opção 4 (Cadastrar nova reserva de hospede ja previamente cadastrado)**
+### **Opção 4 (Cadastrar nova reserva de hóspede já previamente cadastrado)**
 Entrada:
 ```
 4
 ```
 Saída:
 ```
-Codigo do hospede (ja cadastrado):
+Código do hóspede (já cadastrado):
 ```
 Entrada: 
 ```
@@ -180,7 +180,7 @@ Entrada:
 ```
 Saída:
 ```
-Dados do H├│spede:
+Dados do Hóspede:
 Codigo: 1
 Nome: Joao Silva
 RG: 12345678990
@@ -188,9 +188,9 @@ Telefone: 31912345678
 Email: joaosilva@gmail.com
 
 Quartos cadastrados:
-Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: OCUPADO
+Quarto 1 - Tipo: Solteiro - Preço: R$ 120 - Status: OCUPADO
 
-Digite o numero do quarto para nova reserva (ou 0 para cadastrar um novo quarto):
+Digite o número do quarto para nova reserva (ou 0 para cadastrar um novo quarto):
 ```
 Entrada:
 ``` 
@@ -199,9 +199,9 @@ Entrada:
 Saída:
 ```
 Cadastro de Novo Quarto
-Numero do quarto: 02
+Número do quarto: 02
 Tipo (ex: Solteiro, Casal, Luxo): Casal
-Preco da diaria: 350
+Preço da diária: 350
 Quarto cadastrado com sucesso!
 Data de check-in: 12/11/2025
 Data de check-out: 15/11/2025
@@ -216,7 +216,7 @@ Entrada:
 Saída:
 ```
 Status de Reservas (Lista de Quartos)
-Quarto 1 - Tipo: Solteiro - Preco: R$ 120 - Status: OCUPADO
+Quarto 1 - Tipo: Solteiro - Preço: R$ 120 - Status: OCUPADO
 ``` 
 ### **Opção 6 (Ocupar quarto)**
 Entrada:
@@ -225,7 +225,7 @@ Entrada:
 ```
 Saída:
 ```
-Numero do quarto a ocupar: 
+Número do quarto a ocupar: 
 ```
 Entrada:
 ```
@@ -233,7 +233,7 @@ Entrada:
 ```
 Saída: 
 ```
-Quarto 1 ja esta OCUPADO.
+Quarto 1 já esta OCUPADO.
 ```
 
 ### **Opção 7 (Liberar quarto)**
@@ -243,7 +243,7 @@ Entrada:
 ```
 Saída:
 ```
-Numero do quarto a liberar:
+Número do quarto a liberar:
 ```
 Entrada:
 ```
