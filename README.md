@@ -89,7 +89,7 @@ O sistema de gerenciamento de hotel tem como funções:
 
 ## 11. Exemplos de Uso (Entradas e Saídas)
 
-**Opção 1 (cadastrar novo quarto)**
+### **Opção 1 (cadastrar novo quarto)**
 Entrada:
 ```
 1
@@ -102,6 +102,7 @@ Tipo (ex: Solteiro, Casal, Luxo): Casal
 Preco da diaria: 120
 Quarto cadastrado com sucesso!
 ```
+
 **Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)**
 Entrada: 
 ```
@@ -234,8 +235,34 @@ Saída:
 ```
 Quarto 1 ja esta OCUPADO.
 ```
+
 **Opção 7 (Liberar quarto)**
+Entrada:
+```
+7
+```
+Saída:
+```
+Numero do quarto a liberar:
+```
+Entrada:
+```
+1
+```
+Saída:
+```
+Quarto 1 agora esta DISPONIVEL.
+```
+
 **Opção 0 (Sair)**
+Entrada:
+```
+0
+```
+Saída:
+```
+Saindo do sistema...
+```
 
 
 ## 12. Programação Defensiva (Malu) 
