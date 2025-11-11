@@ -432,6 +432,8 @@ return 0;
 (...)
 ## 14. Link do Vídeo de Execução
 
+https://youtu.be/TOLzhTNTRjs?si=N6fCg0efZufoLZCO
+
 ## 15. Equipe e Contribuições
 - Helena Barbosa: responsável pelo desenvolvimento dos arquivos Reserva.h e Sistema.h, desenvolvimento do arquivo Sistema.cpp e modificações no main.cpp relacionadas a funções correspondentes ao sistema do hotel, desenvolvimento da documentação por meio do Doxygen. 
 - Lilla Xavier: responsável pela criação dos arquivos com os cartões CRC e com os requisitos funcionais e não funcionais do código; pelo arquivo Reserva.cpp e por modificar o arquivo main.cpp para que atendesse as funções relacionadas à reserva e pelo desenvolvimento do arquivo README.md. 
