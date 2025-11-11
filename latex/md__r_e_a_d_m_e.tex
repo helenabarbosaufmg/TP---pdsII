@@ -1,0 +1,151 @@
+\chapter{TP---pds\+II }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{TP---pdsII@{TP---pdsII}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{1. Tema do Projeto}{1. Tema do Projeto}}\label{md__r_e_a_d_m_e_autotoc_md1}
+{\bfseries{Título\+:}} Sistema de Gerenciamento de Reserva de Hotel ~\newline
+
+
+{\bfseries{Descrição\+:}} ~\newline
+ O projeto consiste no desenvolvimento de um sistema em C++ voltado para o gerenciamento de reservas de um hotel. O sistema permitirá o cadastro de hóspedes, a reserva e cancelamento de quartos, além do controle de disponibilidade das acomodações. ~\newline
+ O objetivo é criar uma aplicação simples, mas funcional, que auxilie o gerenciamento de um hotel de pequeno porte, permitindo maior organização e controle sobre o fluxo de reservas.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{2. Problema a Ser Resolvido}{2. Problema a Ser Resolvido}}\label{md__r_e_a_d_m_e_autotoc_md2}
+Atualmente, muitos hotéis de pequeno e médio porte ainda realizam o controle de reservas de forma manual, utilizando planilhas ou registros em papel. Esse método aumenta as chances de erro, como {\bfseries{duplicidade de reservas}}, {\bfseries{perda de informações}} e {\bfseries{falta de visão geral sobre a ocupação dos quartos}}. ~\newline
+ O sistema proposto busca solucionar esses problemas ao {\bfseries{automatizar o processo de reserva}}, centralizando as informações de hóspedes, quartos e períodos reservados, garantindo {\bfseries{maior precisão, agilidade e confiabilidade}} no gerenciamento.\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{3. Objetivos do Projeto}{3. Objetivos do Projeto}}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Desenvolver um sistema que permita o {\bfseries{cadastro, consulta, edição e exclusão}} de reservas de hóspedes. ~\newline
+
+\item Implementar funcionalidades para {\bfseries{verificação de disponibilidade}} de quartos e {\bfseries{controle de check-\/in e check-\/out}}. ~\newline
+
+\item Registrar e armazenar as informações em {\bfseries{arquivos locais}}, garantindo a persistência dos dados. ~\newline
+
+\item Aplicar conceitos de {\bfseries{programação orientada a objetos (POO)}}, {\bfseries{tratamento de exceções}} e {\bfseries{uso de estruturas de dados}} (como listas, vetores e structs). ~\newline
+
+\item Utilizar {\bfseries{Git e Git\+Hub}} para controle de versão e colaboração entre os integrantes do grupo.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{4. Ferramentas e Linguagem}{4. Ferramentas e Linguagem}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{Linguagem\+:}} C++ ~\newline
+
+\item {\bfseries{Controle de versão\+:}} Git e Git\+Hub ~\newline
+
+\item {\bfseries{Ambiente de desenvolvimento\+:}} Visual Studio Code ~\newline
+
+\item {\bfseries{Bibliotecas\+:}} iostream, fstream, string, vector e outras da biblioteca padrão do C++ ~\newline
+
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{\texorpdfstring{5. Grupo}{5. Grupo}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Helena de Oliveira Barbosa ~\newline
+
+\item Lilla de Lucas Xavier de Oliveira
+\item Maria Luisa Braga
+\item Livia Viana
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{6. Como Compilar e Executar}{6. Como Compilar e Executar}}\label{md__r_e_a_d_m_e_autotoc_md6}
+O projeto utiliza o Makefile para compilação e execução e como pré-\/requisitos tem\+:
+\begin{DoxyItemize}
+\item Compilador C++ (g++ ou equivalente) com suporte a C++11 ou superior;
+\item make. Comandos a serem utilizados (dentro da pasta do projeto)\+:
+\item make (compila o projeto);
+\item make run (executa o sistema);
+\item make clean (limpa arquivos). Observação\+: caso o projeto seja testado manualmente (sem make), é necessário saber o sistema operacional utilizado (Linux, mac\+OS, Windows etc).
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{7. Organização do Projeto}{7. Organização do Projeto}}\label{md__r_e_a_d_m_e_autotoc_md7}
+A estrutura de diretórios do projeto consiste em\+: {\bfseries{SRC\+:}}
+
+
+\begin{DoxyItemize}
+\item \doxylink{main_8cpp}{main.\+cpp}
+\item Hospede.\+cpp
+\item Quartos.\+cpp
+\item Reserva.\+cpp
+\item Sistema.\+cpp
+\end{DoxyItemize}
+
+{\bfseries{Include\+:}}
+
+
+\begin{DoxyItemize}
+\item Hospede.\+h
+\item Quartos.\+h
+\item Reserva.\+h
+\item Sistema.\+h
+\end{DoxyItemize}
+
+{\bfseries{OUTROS\+:}}
+
+
+\begin{DoxyItemize}
+\item Documentação gerada pelo Doxygen (docs/)
+\item Makefile
+\item README.\+md Os módulos principais, ou seja, os conjuntos de código com uma função específica no programa são\+:
+\item Hospede\+: gerencia os dados dos hóspedes do hotel (nomes, CPF\textquotesingle{}s, contato, check-\/in, check-\/out);
+\item Quartos\+: armazena informações das acomodações do hotel (número, tipo, status);
+\item Reserva\+: armazena informações e estabelece um número para cada reserva feita;
+\item Sistema\+: integra os outros módulos e apresenta o menu principal ao usuário.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{8. Funcionalidades}{8. Funcionalidades}}\label{md__r_e_a_d_m_e_autotoc_md8}
+O sistema de gerenciamento de hotel tem como funções\+:
+\begin{DoxyItemize}
+\item Cadastro de hóspedes;
+\item Cadastro de quartos;
+\item Registro de reservas vinculando hóspedes e quartos;
+\item Verificação da disponibilidade do quarto;
+\item Cancelamento de reserva;
+\item Listagem do status do quarto;
+\item (...)
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{\texorpdfstring{9. Itens Fora do Escopo}{9. Itens Fora do Escopo}}\label{md__r_e_a_d_m_e_autotoc_md9}
+(...)\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysection{\texorpdfstring{10. Instruções de Uso}{10. Instruções de Uso}}\label{md__r_e_a_d_m_e_autotoc_md10}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysection{\texorpdfstring{11. Exemplos de Uso (Entradas e Saídas)}{11. Exemplos de Uso (Entradas e Saídas)}}\label{md__r_e_a_d_m_e_autotoc_md11}
+{\bfseries{Opção 1 (cadastrar novo quarto)}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Entrada:\ 1}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Saida:\ }
+\DoxyCodeLine{Cadastro\ de\ Quarto}
+\DoxyCodeLine{Numero\ do\ quarto:\ 01}
+\DoxyCodeLine{Tipo\ (ex:\ Solteiro,\ Casal,\ Luxo):\ Casal}
+\DoxyCodeLine{Preco\ da\ diaria:\ 120}
+
+\end{DoxyCode}
+ {\bfseries{Opção 2 (Cadastrar novo hospede no quarto previamente cadastrado)}} 
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+ {\bfseries{Opção 3 (Pesquisar numero de reserva)}} {\bfseries{Opção 4 (Cadastrar nova reserva de hospede ja previamente cadastrado)}} {\bfseries{Opção 5 (Status de reservas(\+Listas quartos))}} {\bfseries{Opção 6 (Ocupar quarto)}} {\bfseries{Opção 7 (Liberar quarto)}} {\bfseries{Opção 0 (Sair)}}\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysection{\texorpdfstring{12. Programação Defensiva (Malu)}{12. Programação Defensiva (Malu)}}\label{md__r_e_a_d_m_e_autotoc_md12}
+(...)\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysection{\texorpdfstring{13. Documentação\+: Doxygen (Helena)}{13. Documentação\+: Doxygen (Helena)}}\label{md__r_e_a_d_m_e_autotoc_md13}
+(...) \hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysection{\texorpdfstring{14. Link do Vídeo de Execução}{14. Link do Vídeo de Execução}}\label{md__r_e_a_d_m_e_autotoc_md14}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysection{\texorpdfstring{15. Equipe e Contribuições}{15. Equipe e Contribuições}}\label{md__r_e_a_d_m_e_autotoc_md15}
+
+\begin{DoxyItemize}
+\item Helena Barbosa\+: responsável pelo desenvolvimento dos arquivos Reserva.\+h e Sistema.\+h, desenvolvimento do arquivo Sistema.\+cpp e modificações no \doxylink{main_8cpp}{main.\+cpp} relacionadas a funções correspondentes ao sistema do hotel, desenvolvimento da documentação por meio do Doxygen.
+\item Lilla Xavier\+: responsável pela criação dos arquivos com os cartões CRC e com os requisitos funcionais e não funcionais do código; pelo arquivo Reserva.\+cpp e por modificar o arquivo \doxylink{main_8cpp}{main.\+cpp} para que atendesse as funções relacionadas à reserva e pelo desenvolvimento do arquivo README.\+md.
+\item Lívia Viana\+: responsável pela estruturação inicial dos diretórios do projeto (src, include etc.), pelo desenvolvimento do arquivo Hospede.\+cpp e do arquivo \doxylink{main_8cpp}{main.\+cpp}, que posteriormente foi modificado pelos outros membros, desenvolvimento do arquivo makefile para compilação e execução do projeto.
+\item Maria Luísa Braga\+: responsável pelo desenvolvimento dos arquivos Hospede.\+h e Quartos.\+h, desenvolvimento do arquivo Quartos.\+cpp e modificações no \doxylink{main_8cpp}{main.\+cpp} relacionadas a funções correspondentes aos quartos do hotel, inclusão da programação defensiva no código.
+\end{DoxyItemize}
+
+Observação\+: todos os integrantes participaram da discussão na escolha do tema, no desenvolvimento inicial do ambiente de programação e em modificações e revisões dos códigos e arquivos para a entrega da saída correta e esperada pelo grupo.\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysection{\texorpdfstring{16. Ciclo de Desenvolvimento}{16. Ciclo de Desenvolvimento}}\label{md__r_e_a_d_m_e_autotoc_md16}
+
+\begin{DoxyItemize}
+\item Sprint 1 (05/10 a 09/10)\+: formação da equipe, configuração do Git\+Hub e outros ambientes de desenvolvimento, definição do tema com breve descrição, acesso ao Git\+Hub com um commit teste de cada membro do grupo.
+\item Sprint 2 (09/10 a 23/10)\+: organização inicial dos diretórios do código, levantamento dos requisitos funcionais e não funcionais (User Stories), descrição inicial do funcionamento do sistema (Cartões CRC) e criação dos arquivos .h (Hospede.\+h; Quartos.\+h; Reserva.\+h; Sistema.\+h)
+\item Sprint 3 (23/10 a 11/10)\+: codificação dos arquivos .cpp (\doxylink{main_8cpp}{main.\+cpp}; Hospede.\+cpp; Quartos.\+cpp; Reserva.\+cpp; Sistema.\+cpp), desenvolvimento do README.\+md e da documentação por meio do Doxygen, inclusão de mecanismos para tratar condições de exceção do sistema, revisão do trabalho e desenvolvimento do vídeo de execução.
+\item Sprint 4 (12/11 a 25/11)\+: entrega da apresentação em PDF até dia 12/11 e apresentação em ordem de sorteio dos grupos nos dias 12, 18 e 25 de novembro.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysection{\texorpdfstring{17. Aprendizados\+:}{17. Aprendizados\+:}}\label{md__r_e_a_d_m_e_autotoc_md17}
+
+\begin{DoxyItemize}
+\item Algumas funcionalidades que gostaríamos de ter adicionado ao sistema não foram possíveis, devido a impedimentos como o tempo e a dificuldade de realizá-\/las, por exemplo uma interface gráfica para o sistema de gerenciamento de hotéis.
+\item Dificuldade inicial com o ambiente de desenvolvimento Git\+Hub, devido aos diversos comandos necessários para commitar updates e pelo fato de que foi necessário grande comunicação entre os membros do grupo para que mudanças por pessoas diferentes não fossem feitas ao mesmo tempo, pois nem sempre eram salvos se feitas no mesmo momento.
+\item Retrabalho no desenvolvimento do \doxylink{main_8cpp}{main.\+cpp} ao perceber que, apesar de estar compilando corretamente, não estava entregando a saída esperada. Assim foram necessárias pequenas mudanças em todo código do main.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysection{\texorpdfstring{18. Evidências no Github\+:}{18. Evidências no Github\+:}}\label{md__r_e_a_d_m_e_autotoc_md18}
+
+\begin{DoxyItemize}
+\item {\bfseries{Commits\+:}} registro de todas as alterações com autoria individual.
+\item {\bfseries{Issues\+:}} utilizadas para distribuir tarefas e acompanhar progresso.
+\item {\bfseries{Milestones\+:}} criadas para organizar entregas por sprint.
+\item {\bfseries{Pull Requests\+:}} revisões e integração de código entre membros.
+\item {\bfseries{Release final\+:}} tag {\ttfamily v1.\+0.\+0} com código testado, documentação e vídeo de execução. 
+\end{DoxyItemize}
