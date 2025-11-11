@@ -78,12 +78,13 @@ O sistema de gerenciamento de hotel tem como funções:
   - Verificação da disponibilidade do quarto;
   - Cancelamento de reserva;
   - Listagem do status do quarto;
-  - (...)
+  - Cadastro de hóspede salvo para novas reservas. 
 
 
 ## 9. Itens Fora do Escopo
 
-(...) 
+- Cadastro de hóspede salvo para novas reservas. 
+
 
 ## 10. Instruções de Uso 
 - **Para Linux:**
@@ -107,6 +108,13 @@ Compilar com MakeFile:
 `make`
 
 OBS: make clean não funciona no Windows. 
+
+Observações de uso:
+- Para cadastrar uma reserva, é necessário que já haja um quarto registrado;
+- Quando colocar o tipo do quarto, usar a primeira letra maiúscula;
+- Colocar datas de check-in e check-out no modelo: dd/mm/aaaa;
+- Telefone e RG só aceitam números (sem caracteres especiais). 
+  
 
 ## 11. Exemplos de Uso (Entradas e Saídas)
 
